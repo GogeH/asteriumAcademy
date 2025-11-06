@@ -40,7 +40,7 @@ export default async function PostPage({ params }: TPostPageProps) {
       <Head>
         <StructuredData post={post} />
       </Head>
-      <BackgroundWrapper>
+      <BackgroundWrapper className="max-sm:bg-none">
         <Header />
         <main className="mx-auto px-28 max-lg:px-16 max-sm:px-4">
           <PostTitle

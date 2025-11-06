@@ -32,7 +32,7 @@ export default function BackgroundWrapper({
                   max-lg:bg-center max-sm:bg-none"
             >
               <div
-                className={`mx-auto pt-8 max-lg:pt-11 max-sm:pt-4 bg-center bg-cover bg-no-repeat h-[3134px] 
+                className={`mx-auto pt-8 max-lg:pt-11 max-sm:pt-4 bg-center bg-cover bg-no-repeat h-[1626px]
                 bg-[url('/bg/bg-desktop-2.webp')] max-lg:h-[140px] max-lg:bg-[url('/bg/bg-tablet-6.webp')] max-sm:bg-[url('/bg/bg-desktop-2.webp')] max-sm:h-[1504px] ${className || ''}`}
               >
                 {children}
