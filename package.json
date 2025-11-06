@@ -1,26 +1,36 @@
 {
-  "name": "octo",
+  "name": "asteriumacademy",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "production": "yarn build && yarn start",
+    "lint": "eslint",
+    "postbuild": "next-sitemap",
+    "svgo": "svgo -f public/svg -o public/svg"
   },
   "dependencies": {
+    "@directus/sdk": "^18.0.3",
+    "critters": "^0.0.23",
+    "next": "^16.0.1",
+    "next-secure-headers": "^2.2.0",
+    "next-sitemap": "^4.2.3",
     "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "next": "16.0.0"
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
-    "eslint-config-next": "16.0.0"
+    "eslint-config-next": "16.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2",
+    "svgo": "^4.0.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

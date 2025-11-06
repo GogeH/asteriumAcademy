@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('assets/fonts/helveticaNeue/HelveticaNeueCyr-Roman.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('assets/fonts/helveticaNeue/HelveticaNeueCyr-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('assets/fonts/helveticaNeue/HelveticaNeueCyr-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Apercu Pro';
+    src: url('assets/fonts/apercu/Apercu-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #070708;
+    --foreground: #171717;
+
+    --text-white: #FFFFFF;
+    --text-black-light: #202020;
+    --text-white-light: #FFFFFF99;
+
+    --accent-green: #53FE43;
+    --accent-yellow: #D9FE43;
+    --dark-gray: #131316;
+
+    --text-silver: rgba(192, 192, 192, 0.9);
+    --card-bg: rgba(35, 35, 35, 0.9);
+    --text-gray: rgba(115, 115, 115, 1);
+
+    --font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-apercu: "Apercu Pro", sans-serif;
+
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --font-sans: var(--font-helvetica), "Helvetica Neue", sans-serif;
+    --font-manrope: "Manrope", sans-serif;
+    --font-roboto: "Roboto", sans-serif;
+    --font-inter: "Inter", sans-serif;
+    --font-apercu: var(--font-apercu), sans-serif;
+
+    --color-text-white: var(--text-white);
+    --color-text-white-light: var(--text-white-light);
+    --color-text-black-light: var(--text-black-light);
+    --color-accent-green: var(--accent-green);
+    --color-accent-yellow: var(--accent-yellow);
+    --color-dark-gray: var(--dark-gray);
+
+    --color-silver: var(--text-silver);
+    --color-card-bg: var(--card-bg);
+    --color-gray: var(--text-gray);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text-white);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
