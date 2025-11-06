@@ -55,7 +55,7 @@ export default function PostList({
 
   if (posts === null || isError)
     return (
-      <div className="font-medium text-[24px] leading-[139%] mb-2">
+      <div className="font-medium text-[34px] leading-[139%]">
         Не получилось загрузить посты!
       </div>
     );
@@ -66,7 +66,7 @@ export default function PostList({
         Пока нет постов
       </div>
     );
-  console.log(posts, 'posts');
+
   return (
     <div className={`${isPostPage && 'px-3 max-lg:mb-16'} max-lg:px-0`}>
       {!isPostPage && <CategorySelect />}
