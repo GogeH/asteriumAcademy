@@ -1,0 +1,147 @@
+{
+  "gosha": "Georgiy",
+  "nav": {
+    "item1": "Yangiliklar",
+    "item2": "Web3 nima?",
+    "item3": "Jamiyat"
+  },
+  "title-page": {
+    "item1": "Boshlang",
+    "item2": "Sayohat"
+  },
+  "slogan": "Web3 quruvchilari, mutafakkirlari va ijodkorlarining keyingi avlodini qo'llab-quvvatlash",
+  "footer": {
+    "contact": "Kontaktlar",
+    "address": "Bosh ofis manzili",
+    "address-country": "O'zbekiston Respublikasi",
+    "address-info": "Toshkent, Said Baraka ko'chasi 12A",
+    "mail": "Elektron pochta",
+    "helpline": "Ishonch telefoni",
+    "about-platform": "Platforma haqida",
+    "list-about-platform": {
+      "products": "Mahsulotlar",
+      "ecosystem": "Ekotizim",
+      "team": "Jamoa"
+    },
+    "to-user": "To the user",
+    "list-to-user": {
+      "support": "Qo'llab-quvvatlash",
+      "knowledge-base": "Bilimlar bazasi",
+      "blog": "Blog",
+      "faq": "Savollar va javoblar"
+    },
+    "documents": "Hujjatlar",
+    "list-documents": {
+      "user-agreement": "Foydalanuvchi shartnomasi",
+      "policy-confidentiality": "Maxfiylik siyosati",
+      "license": "Litsenziya"
+    }
+  },
+  "faq": {
+    "title": "Chasto zavaemye savol",
+    "list-question": {
+      "question1": "Bezopasno li xranit sredstva na Asterium?",
+      "question2": "Almashinuv qanchalik tez sodir bo'ladi?",
+      "question3": "Shaxsni tasdiqlash shartmi?",
+      "question4": "Pul yechib olish uchun biron bir to'lov bormi?"
+    },
+    "list-answer": {
+      "answer1": "Xavfsizlik bizning ustuvor vazifamizdir. Biz foydalanuvchi ma'lumotlari va mablag'larini himoya qilish uchun ilg'or texnologiyalardan foydalanamiz va kriptovalyuta operatsiyalariga oid O'zbekiston qonunchiligiga qat'iy rioya qilamiz.",
+      "answer2-1": "Omonatlar va pul yechish HUMO/VISA/Mastercard bank kartalari orqali so'm va AQSh dollari fiat valyutalarida amalga oshiriladi. Shuningdek, siz mablag'larni bizning hamkorimiz Garant Bankdan yoki dunyoning istalgan nuqtasidan SWIFT orqali kiritishingiz mumkin.",
+      "answer2-2": "Shuningdek, taniqli birjalar va depozitariy bo'lmagan hamyonlarga (zanjirda/zanjirdan tashqari) kripto aktivlarini qabul qilish va yuborish mumkin.",
+      "answer2-3": "Fiat valyutasini HUMO kartalari orqali yechib olish mumkin, kripto aktivlarini esa taniqli birjalar va depozitga qo'yilmagan hamyonlarga yechib olish mumkin.",
+      "answer3": "KYC (shaxsni tasdiqlash) protsedurasi foydalanuvchining fuqaroligiga bog'liq. Ro'yxatdan o'tish faqat 18 yoshdan oshgan foydalanuvchilar uchun mavjud va ro'yxatdan o'tish jarayonida batafsil ko'rsatmalar beriladi.",
+      "answer4": "To'lovlar tranzaksiya turiga va kripto aktiviga bog'liq. To'lov haqida batafsil ma'lumot platformada ro'yxatdan o'tgandan so'ng mavjud bo'ladi."
+    }
+  },
+  "partners": {
+    "title": "Bizning hamkorlarimiz",
+    "text": "Bizning sertifikatlarimiz bilan o'qish safaringizga qiymat va ishonchlilik qo'shing"
+  },
+  "video": {
+    "title": "Asterium Web3 video seriyasi",
+    "link-text": "YouTube kanalimizga tashrif buyuring",
+    "video-title1": "Web3 nima? Tezkor vizual kirish",
+    "video-title2": "Muhandislar uchun blokcheyn bo'yicha yangi boshlanuvchilar uchun qo'llanma",
+    "video-title3": "Muhandislar uchun blokcheyn bo'yicha yangi boshlanuvchilar uchun qo'llanma"
+  },
+  "advantage": {
+    "title": "Nima uchun asterium akademiyasi?",
+    "advantage-list": {
+      "title-item1": "Mutaxassislar tomonidan boshqariladigan kontent",
+      "title-item2": "Jamiyatga kirish",
+      "title-item3": "Interaktiv o'rganish",
+      "title-item4": "Yutuq sertifikatlari",
+      "text-item1": "Ko'p yillik tajribaga ega sanoat mutaxassislaridan o'rganing.",
+      "text-item2": "Ko'p yillik tajribaga ega sanoat mutaxassislaridan o'rganing.",
+      "text-item3": "Ko'p yillik tajribaga ega sanoat mutaxassislaridan o'rganing.",
+      "text-item4": "Bizning sertifikatlarimiz bilan o'qish safaringizga qiymat va ishonchlilik qo'shing."
+    }
+  },
+  "post": {
+    "title": "Darslarni kuzatuvchi",
+    "text": "Web3 quruvchilari, mutafakkirlari va ijodkorlarining keyingi avlodini qo'llab-quvvatlash.",
+    "select1": "Kategoriyani tanlang",
+    "select2": "Kategoriyani olib tashlash",
+    "select3": "Boshlang'ich",
+    "select4": "Ilg'or",
+    "select5": "O'rta",
+    "loading": "Xabarlar yuklanmoqda",
+    "load-more": "Ko'proq yuklang",
+    "load-more-status": "Yuklanmoqda",
+    "message-not-posts": "Hali postlar yo'q",
+    "message-error-posts": "Xabarlarni yuklab bo'lmadi!",
+    "min-read": "minimal o'qish",
+    "read-more": "Ko'proq o'qish",
+    "button-text": "Asteriumdan foydalanishni boshlang",
+    "created": "Yaratilgan",
+    "updated": "Yangilandi"
+  },
+  "not-found": {
+    "title": "Sahifa topilmadi",
+    "text": "Lekin biz sizga marshrutdagi kerakli nuqtaga qaytishingizga yordam beramiz",
+    "post-text": "Bu post mavjud emas yoki o'chirilgan",
+    "button-next": "Bosh sahifaga qaytish"
+  },
+  "icon": {
+    "icon-pointing": "Kontentga ishora qiluvchi belgi",
+    "experts-icon": "Mutaxassislar belgisi",
+    "chat-icon": "Chat belgisi",
+    "document-icon": "Hujjat belgisi",
+    "achievement-icon": "Yutuq belgisi",
+    "logo-icon": "Logotip belgisi",
+    "armenian-code-icon": "Arman kod akademiyasi hamkor belgisi",
+    "mdis-icon": "MDIS Tashkent hamkor belgisi",
+    "asterium-icon": "Asterium belgisi",
+    "planet-icon": "Til tanlash uchun sayyora belgisi",
+    "instagram-icon": "Instagram belgisi",
+    "telegram-icon": "Telegram belgisi",
+    "youtube-icon": "YouTube belgisi"
+  },
+  "metadata": {
+    "url": "uz",
+    "title": "Asterium - O'zbekistondagi yetakchi kriptovalyuta birjasi",
+    "authors": "Asterium jamoasi",
+    "description": "O'zbekistondagi eng yirik kriptovalyuta birjasi",
+    "keywords": {
+      "asterium": "Asterium",
+      "crypto-exchange": "kripto birjasi",
+      "cryptocurrency": "kriptovalyuta",
+      "bitcoin": "Bitcoin",
+      "uzbekistan": "O'zbekiston",
+      "blockchain": "blokcheyn",
+      "crypto-trading": "kripto savdosi",
+      "tashkent": "Toshkent"
+    },
+    "creator": "Asterium jamoasi",
+    "publisher": "Asterium",
+    "open-graph": {
+      "type": "veb-sayt",
+      "locale": "uz_UZ",
+      "description": "O'zbekistondagi eng ishonchli kripto platformasi bo'lgan Asterium bilan kriptovalyutalarni xavfsiz tarzda savdo qiling, sotib oling va saqlang.",
+      "images": {
+        "alt": "Asterium — Kriptovalyuta birjasi"
+      }
+    }
+  }
+}

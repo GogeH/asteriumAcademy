@@ -3,15 +3,25 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { BUTTON_LIST } from '@/constants/nav';
 import NavItem from '@/components/common/Header/NavItem';
 import LanguageSwitcher from '@/components/common/Header/LanguageSwitcher';
+import { TNavItem } from '@/types/nav';
 
 type TBurgerMenuProps = {
   isNotFoundHeader?: boolean;
+  isErrorPage?: boolean;
+  translatedNavItems: TNavItem[];
+  iconALt: string;
+  iconLanguageALt: string;
 };
 
-export default function BurgerMenu({ isNotFoundHeader }: TBurgerMenuProps) {
+export default function BurgerMenu({
+  isNotFoundHeader,
+  isErrorPage,
+  translatedNavItems,
+  iconALt,
+  iconLanguageALt,
+}: TBurgerMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -107,22 +117,27 @@ export default function BurgerMenu({ isNotFoundHeader }: TBurgerMenuProps) {
         <Link href="/">
           <Image
             src="/svg/asteriumBig.svg"
-            alt="Логотип"
+            alt={iconALt}
             className="mb-13"
             width={48}
             height={48}
           />
         </Link>
-        {BUTTON_LIST.slice(isNotFoundHeader ? 2 : 0, 3).map((item) => (
+        {translatedNavItems.slice(isNotFoundHeader ? 2 : 0, 3).map((item) => (
           <NavItem
             key={item.anchor}
             navItem={item}
             isBurgerMenu
             setIsOpenAction={setIsOpen}
+            iconALt={iconALt}
           />
         ))}
         <div className="border-1 border-white/40" />
-        <LanguageSwitcher isBurgerMenu />
+        <LanguageSwitcher
+          isBurgerMenu
+          iconLanguageALt={iconLanguageALt}
+          isErrorPage={isErrorPage}
+        />
       </div>
     </div>
   );

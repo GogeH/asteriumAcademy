@@ -16,7 +16,7 @@ export default async function NotFound() {
   return (
     <div className="pt-8 max-lg:pt-11 max-sm:pt-4">
       <Header lng={lng} isErrorPage />
-      <NotFoundContent lng={lng} />
+      <NotFoundContent lng={lng} isPostPage />
       <Footer lng={lng} />
     </div>
   );

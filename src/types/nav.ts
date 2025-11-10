@@ -1,6 +1,7 @@
 export type TNavItem = {
-  text: string;
+  text?: string;
   anchor: string;
+  translationKey: string;
   isIcon?: boolean;
   isLink?: boolean;
 };

@@ -19,7 +19,7 @@ type TYouTubePlayerProps = {
   isLarge?: boolean;
 };
 
-export default function YouTubePlayer({
+export default function VideoPlayer({
   videoId,
   title,
   width,

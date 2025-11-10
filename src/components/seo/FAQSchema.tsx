@@ -2,13 +2,6 @@
 
 import React from 'react';
 
-type TFAQItem = {
-  question: string;
-  answer: string;
-  answerSecond?: string;
-  answerThird?: string;
-};
-
 type FAQSchemaProps = {
   faqs: TFAQItem[];
 };

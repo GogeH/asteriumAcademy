@@ -3,21 +3,26 @@
 import { MouseEvent } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { TNavItem } from '@/types/nav';
 
 type TNavListProps = {
   navItem: TNavItem;
   isBurgerMenu?: boolean;
   setIsOpenAction?: (isOpen: boolean) => void;
+  lng?: string;
+  iconALt: string;
 };
 
 export default function NavItem({
   navItem,
   isBurgerMenu,
   setIsOpenAction,
+  lng,
+  iconALt,
 }: TNavListProps) {
   const pathname = usePathname();
+  const router = useRouter();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -35,20 +40,40 @@ export default function NavItem({
   };
 
   const handleLinkClick = (e: MouseEvent) => {
-    if (pathname === '/' && document.getElementById(navItem.anchor)) {
+    if (pathname === `/${lng}` && document.getElementById(navItem.anchor)) {
       e.preventDefault();
 
-      setTimeout(() => {
-        setIsOpenAction?.(false);
-      }, 300);
+      setIsOpenAction?.(false);
 
       setTimeout(() => {
         scrollToSection(navItem.anchor);
-        window.history.pushState(null, '', `/#${navItem.anchor}`);
-      }, 400);
+        window.history.pushState(null, '', `/${lng}#${navItem.anchor}`);
+      }, 100);
+    } else if (!navItem.isLink) {
+      e.preventDefault();
+      setIsOpenAction?.(false);
+
+      router.push(`/${lng}#${navItem.anchor}`);
+
+      setTimeout(() => {
+        const element = document.getElementById(navItem.anchor);
+        if (element) {
+          setTimeout(() => scrollToSection(navItem.anchor), 100);
+        }
+      }, 300);
     } else {
       setIsOpenAction?.(false);
     }
+  };
+
+  const getHref = () => {
+    if (navItem.isLink) {
+      return 'https://t.me/asteriumwallet';
+    }
+
+    return pathname === `/${lng}`
+      ? `#${navItem.anchor}`
+      : `/${lng}#${navItem.anchor}`;
   };
 
   return (
@@ -70,7 +95,7 @@ export default function NavItem({
             <Image
               src="/svg/asterium.svg"
               className="mr-2"
-              alt="Иконка Астериум"
+              alt={iconALt}
               width={24}
               height={24}
             />
@@ -79,7 +104,7 @@ export default function NavItem({
         </Link>
       ) : (
         <Link
-          href={`/#${navItem.anchor}`}
+          href={getHref()}
           onClick={handleLinkClick}
           className={
             isBurgerMenu

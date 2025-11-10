@@ -4,9 +4,19 @@ import ExperienceBadge from '@/components/shared/ExperienceBadge';
 
 type TPostCardProps = {
   post: TPost;
+  minRead: string;
+  readMore: string;
+  lng: string;
+  isPostPage?: boolean;
 };
 
-export default function PostItem({ post }: TPostCardProps) {
+export default function PostItem({
+  post,
+  minRead,
+  readMore,
+  lng,
+  isPostPage,
+}: TPostCardProps) {
   return (
     <li
       key={post.id}
@@ -14,7 +24,9 @@ export default function PostItem({ post }: TPostCardProps) {
     >
       <div className="flex justife-start items-center mb-4">
         <ExperienceBadge experience="Beginner" />
-        <p className="font-apercu text-sm leading-[150%]">{'5'} min read</p>
+        <p className="font-apercu text-sm leading-[150%]">
+          {'5'} {minRead}
+        </p>
       </div>
 
       <h4 className="font-medium text-[24px] leading-[139%] mb-2">
@@ -22,10 +34,11 @@ export default function PostItem({ post }: TPostCardProps) {
       </h4>
       <p className="opacity-60 mb-6">{post.excerpt}</p>
       <Link
-        href={`/post/${post.slug}`}
-        className="mt-auto max-w-[105px] h-[37px] rounded-[24px] py-2 px-4 backdrop-blur-sm bg-[rgba(86,86,86,0.3)] font-inter font-semibold text-[14px] cursor-pointer flex items-center justify-center"
+        href={`/${lng}/post/${post.slug}`}
+        className={`mt-auto ${lng === 'en' ? 'max-w-[105px]' : 'max-w-[135px]'} h-[37px] rounded-[24px] py-2 px-4 backdrop-blur-sm bg-[rgba(86,86,86,0.3)] 
+        font-inter font-semibold text-[14px] cursor-pointer flex items-center justify-center`}
       >
-        Read more
+        {readMore}
       </Link>
     </li>
   );

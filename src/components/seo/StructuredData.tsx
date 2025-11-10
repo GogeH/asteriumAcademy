@@ -51,7 +51,6 @@ export default function StructuredData({
 
   const structuredDataArray: JsonLD[] = [siteJsonLd];
 
-  // Хлебные крошки с поддержкой языка
   if (segments.length > 0) {
     const items = segments.map((segment, index) => {
       const urlSegments = segments.slice(0, index + 1);

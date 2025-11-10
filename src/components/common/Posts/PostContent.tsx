@@ -1,5 +1,7 @@
 import ExperienceBadge from '@/components/shared/ExperienceBadge';
-import { formatDateCustom } from '@/utils/formatDate';
+import { formatDateCustom, Language } from '@/utils/formatDate';
+import { useTranslation } from '@/app/i18n';
+import Link from 'next/link';
 
 type TPostTitleProps = {
   title: string;
@@ -8,28 +10,32 @@ type TPostTitleProps = {
   dateCreated: string;
   dateUpdated: string;
   content: string;
+  lng: string;
 };
 
-export default function TPostTitle({
+export default async function PostContent({
   title,
   experience,
   timeRead,
   dateCreated,
   dateUpdated,
   content,
+  lng,
 }: TPostTitleProps) {
+  const { t } = await useTranslation(lng);
+
   return (
-    <section className="break-words mt-35 px-3 max-lg:mt-20 max-lg:px-0">
+    <section className="break-words mt-45 px-3 max-lg:mt-20 max-lg:px-0">
       <h1 className="font-medium text-[80px] leading-[100%] tracking-[-0.04em] uppercase mb-6 max-lg:text-[64px] max-sm:text-[48px]">
         {title}
       </h1>
       <div className="flex items-center mb-10.5 max-sm:mb-9">
         <ExperienceBadge experience={experience || 'Intermediate'} />
         <p className="leading-[131.25%] text-silver ml-6">
-          {timeRead} min read ·{' '}
-          {!dateCreated
-            ? `Created ${formatDateCustom(dateCreated)}`
-            : `Updated ${formatDateCustom(dateUpdated)}`}
+          {timeRead} {t('post.min-read')} ·{' '}
+          {dateUpdated
+            ? `${t('post.updated')} ${formatDateCustom(dateUpdated, lng as Language)}`
+            : `${t('post.created')} ${formatDateCustom(dateCreated, lng as Language)}`}
         </p>
       </div>
       <div
@@ -43,6 +49,16 @@ export default function TPostTitle({
       "
         dangerouslySetInnerHTML={{ __html: content }}
       />
+      <div className="mb-23 px-3 max-lg:px-0 max-lg:mb-24">
+        <Link
+          href="https://app.asterium.uz/sign-up"
+          target="_blank"
+          className="rounded-[200px] py-4 px-6 bg-[rgba(217,254,67,1)]
+        font-inter font-semibold text-base leading-[115%] tracking-[-0.02em] text-center text-text-black-light"
+        >
+          {t('post.button-text')}
+        </Link>
+      </div>
     </section>
   );
 }

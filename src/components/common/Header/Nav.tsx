@@ -1,11 +1,19 @@
-import { BUTTON_LIST } from '@/constants/nav';
 import NavItem from '@/components/common/Header/NavItem';
+import { TNavItem } from '@/types/nav';
 
 type TNavProps = {
   isNotFoundHeader?: boolean;
+  translatedNavItems: TNavItem[];
+  lng: string;
+  iconALt: string;
 };
 
-export default function Nav({ isNotFoundHeader }: TNavProps) {
+export default function Nav({
+  isNotFoundHeader,
+  translatedNavItems,
+  lng,
+  iconALt,
+}: TNavProps) {
   return (
     <nav className="max-[750px]:hidden">
       <ul
@@ -20,8 +28,13 @@ export default function Nav({ isNotFoundHeader }: TNavProps) {
     `,
         }}
       >
-        {BUTTON_LIST.slice(isNotFoundHeader ? 2 : 0, 3).map((item) => (
-          <NavItem key={item.anchor} navItem={item} />
+        {translatedNavItems.slice(isNotFoundHeader ? 2 : 0, 3).map((item) => (
+          <NavItem
+            key={item.anchor}
+            navItem={item}
+            lng={lng}
+            iconALt={iconALt}
+          />
         ))}
       </ul>
     </nav>

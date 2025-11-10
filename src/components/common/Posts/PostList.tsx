@@ -12,12 +12,30 @@ type TSimplePostsListProps = {
   initialPosts: TPost[] | null;
   isPostPage?: boolean;
   breakpoint?: TSize | null;
+  categories?: Array<{ id: string; name: string }>;
+  loadMore: string;
+  loadMoreStatus: string;
+  notPosts: string;
+  errorLoadingPosts: string;
+  minRead: string;
+  readMore: string;
+  lng: string;
+  title?: string;
 };
 
 export default function PostList({
   initialPosts,
   isPostPage = false,
   breakpoint = 'MOBILE',
+  categories,
+  loadMore,
+  loadMoreStatus,
+  notPosts,
+  errorLoadingPosts,
+  minRead,
+  readMore,
+  title,
+  lng,
 }: TSimplePostsListProps) {
   const [posts, setPosts] = useState<TPost[] | null>(initialPosts);
   const [page, setPage] = useState(PAGINATION_CONFIG.INITIAL_PAGE_NUMBER + 1);
@@ -28,7 +46,7 @@ export default function PostList({
       PAGINATION_CONFIG.PAGE_SIZE[breakpoint || 'MOBILE'],
   );
 
-  const loadMore = async () => {
+  const onClickLoadMore = async () => {
     if (isLoading) return;
 
     setIsLoading(true);
@@ -55,24 +73,24 @@ export default function PostList({
 
   if (posts === null || isError)
     return (
-      <div className="font-medium text-[34px] leading-[139%]">
-        Не получилось загрузить посты!
+      <div className="font-medium text-[34px] leading-[139%] mb-2">
+        {errorLoadingPosts}
       </div>
     );
 
   if (!posts.length)
     return (
-      <div className="font-medium text-[24px] leading-[139%] mb-2">
-        Пока нет постов
+      <div className="font-medium text-[34px] leading-[139%] mb-2">
+        {notPosts}
       </div>
     );
 
   return (
     <div className={`${isPostPage && 'px-3 max-lg:mb-16'} max-lg:px-0`}>
-      {!isPostPage && <CategorySelect />}
+      {!isPostPage && categories && <CategorySelect categories={categories} />}
       {isPostPage && (
         <h2 className="font-bold text-[32px] leading-[139%] mb-8 ml-6 max-lg:uppercase max-lg:font-medium max-lg:leading-[100%] max-lg:tracking-[-0.04em] max-lg:ml-0 max-lg:mb-10">
-          Another lessons
+          {title}
         </h2>
       )}
       <ul
@@ -80,19 +98,26 @@ export default function PostList({
         role="list"
       >
         {posts?.map((post) => (
-          <PostItem key={post.id} post={post} />
+          <PostItem
+            key={post.id}
+            post={post}
+            minRead={minRead}
+            readMore={readMore}
+            lng={lng}
+            isPostPage={isPostPage}
+          />
         ))}
       </ul>
       {hasMore && !isPostPage && (
         <div className="flex justify-center">
           <button
-            onClick={loadMore}
+            onClick={onClickLoadMore}
             disabled={isLoading}
             className="font-manrope font-medium text-sm underline underline-offset-[25%] decoration-1 leading-[110%]
             tracking-tight text-silver hover:text-gray-300 transition-colors disabled:opacity-50
             disabled:cursor-not-allowed cursor-pointer"
           >
-            {isLoading ? 'Loading' : 'Load more'}
+            {isLoading ? `${loadMoreStatus}` : `${loadMore}`}
           </button>
         </div>
       )}

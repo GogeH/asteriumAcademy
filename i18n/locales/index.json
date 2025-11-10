@@ -1,0 +1,26 @@
+{
+  "ru": {
+    "gosha": "Георгий",
+    "nav": {
+      "item1": "Блог",
+      "item2": "What is web3?",
+      "item3": "Сообщество"
+    }
+  },
+  "en": {
+    "gosha": "George",
+    "nav": {
+      "item1": "Blog",
+      "item2": "Что такое web3?",
+      "item3": "Community"
+    }
+  },
+  "uz": {
+    "gosha": "Georgiy",
+    "nav": {
+      "item1": "Yangiliklar",
+      "item2": "Web3 nima?",
+      "item3": "Jamiyat"
+    }
+  }
+}

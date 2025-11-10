@@ -2,23 +2,59 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 
 const LANGUAGES = [
-  { code: 'RUS', name: 'RUS' },
-  { code: 'UZB', name: 'UZB' },
-  { code: 'ENG', name: 'ENG' },
+  { code: 'ru', name: 'RUS' },
+  { code: 'uz', name: 'UZB' },
+  { code: 'en', name: 'ENG' },
 ] as const;
+
+type TLanguageCode = 'ru' | 'uz' | 'en';
 
 type TLanguageSwitcherProps = {
   isBurgerMenu?: boolean;
+  isErrorPage?: boolean;
+  iconLanguageALt: string;
 };
 
 export default function LanguageSwitcher({
   isBurgerMenu,
+  isErrorPage,
+  iconLanguageALt,
 }: TLanguageSwitcherProps) {
+  const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState<string>(LANGUAGES[0].code);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const getCurrentLang = () => {
+    const segments = pathname.split('/').filter(Boolean);
+    const currentLang = segments[0] || 'ru';
+
+    const supportedLanguages = LANGUAGES.map((lang) => lang.code);
+    return supportedLanguages.includes(currentLang as TLanguageCode)
+      ? currentLang
+      : 'ru';
+  };
+
+  const [currentLang, setCurrentLang] = useState<string>(getCurrentLang());
+
+  const changeLanguage = (lng: string) => {
+    if (isErrorPage) {
+      router.push(`/${lng}`);
+    } else {
+      const newPathname = pathname.replace(`/${currentLang}`, `/${lng}`);
+      router.push(newPathname);
+    }
+
+    setCurrentLang(lng);
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    setCurrentLang(getCurrentLang());
+  }, [pathname]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -54,10 +90,10 @@ export default function LanguageSwitcher({
         onClick={() => setIsOpen(!isOpen)}
         className="h-4 flex items-center justify-center font-inter font-semibold text-sm leading-[115%] tracking-[-0.02em] text-center cursor-pointer"
       >
-        <span className="mr-2">{currentLang}</span>
+        <span className="mr-2">{currentLang.toUpperCase()}</span>
         <Image
           src="/svg/global.svg"
-          alt="Иконка планеты для выбора языка"
+          alt={iconLanguageALt}
           width={24}
           height={24}
         />
@@ -92,14 +128,12 @@ export default function LanguageSwitcher({
 
               <button
                 onClick={() => {
-                  setCurrentLang(lang.code);
-                  setIsOpen(false);
+                  changeLanguage(lang.code);
                 }}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    setCurrentLang(lang.code);
-                    setIsOpen(false);
+                    changeLanguage(lang.code);
                   }
                   if (e.key === 'Escape') {
                     setIsOpen(false);

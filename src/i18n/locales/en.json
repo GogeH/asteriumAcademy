@@ -1,0 +1,147 @@
+{
+  "gosha": "George",
+  "nav": {
+    "item1": "Blog",
+    "item2": "What is web3?",
+    "item3": "Community"
+  },
+  "title-page": {
+    "item1": "Start your",
+    "item2": "Journey"
+  },
+  "slogan": "Empowering the next generation of Web3 builders, thinkers, and creators",
+  "footer": {
+    "contact": "Contacts",
+    "address": "Head office address",
+    "address-country": "Republic of Uzbekistan",
+    "address-info": "Tashkent, Said Baraka Street 12A",
+    "mail": "E-mail",
+    "helpline": "Helpline",
+    "about-platform": "About the platform",
+    "list-about-platform": {
+      "products": "Products",
+      "ecosystem": "Ecosystem",
+      "team": "Team"
+    },
+    "to-user": "Foydalanuvchiga",
+    "list-to-user": {
+      "support": "Support",
+      "knowledge-base": "Knowledge Base",
+      "blog": "Blog",
+      "faq": "FAQ"
+    },
+    "documents": "Documents",
+    "list-documents": {
+      "user-agreement": "User Agreement",
+      "policy-confidentiality": "Policy confidentiality",
+      "license": "License"
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "list-question": {
+      "question1": "Is it safe to store funds on Asterium?",
+      "question2": "How fast does the exchange take place?",
+      "question3": "Is identity verification required?",
+      "question4": "Are there any fees for withdrawals?"
+    },
+    "list-answer": {
+      "answer1": "Security is our top priority. We use advanced technologies to protect user data and funds, and strictly adhere to Uzbek legislation regarding cryptocurrency transactions.",
+      "answer2-1": "Deposits and withdrawals are available using HUMO/VISA/Mastercard bank cards in UZS and USD fiat currencies. You can also deposit funds from our partner Garant Bank or via SWIFT from anywhere in the world.",
+      "answer2-2": "It is also possible to receive and send (on/off chain) crypto assets to well-known exchanges and non-custodial wallets.",
+      "answer2-3": "Fiat currency withdrawals are available to HUMO cards, and crypto assets can be withdrawn to well-known exchanges and non-custodial wallets.",
+      "answer3": "The KYC (identity verification) procedure depends on the user's citizenship. Registration is only available to users over 18 years of age, and detailed instructions will be provided during the registration process.",
+      "answer4": "Fees depend on the transaction type and crypto asset. Detailed fee information will be available after registering on the platform."
+    }
+  },
+  "partners": {
+    "title": "Our partners",
+    "text": "Add value and credibility to your learning journey with our Certificates"
+  },
+  "video": {
+    "title": "Asterium Web3 Video Series",
+    "link-text": "Visit Our YouTube Channel",
+    "video-title1": "What is web3? Fast Visual Intro",
+    "video-title2": "A beginner’s guide to blockchain for engineers",
+    "video-title3": "A beginner’s guide to blockchain for engineers"
+  },
+  "advantage": {
+    "title": "Why asterium academy?",
+    "advantage-list": {
+      "title-item1": "Expert-Led Content",
+      "title-item2": "Community access",
+      "title-item3": "Interactive Learning",
+      "title-item4": "Certificates of Achievement",
+      "text-item1": "Learn from industry experts with years of experience.",
+      "text-item2": "Learn from industry experts with years of experience.",
+      "text-item3": "Learn from industry experts with years of experience.",
+      "text-item4": "Add value and credibility to your learning journey with our Certificates."
+    }
+  },
+  "post": {
+    "title": "Lessons tracker",
+    "text": "Empowering the next generation of Web3 builders, thinkers, and creators.",
+    "select1": "Select a category",
+    "select2": "Remove a category",
+    "select3": "Beginner",
+    "select4": "Advanced",
+    "select5": "Intermediate",
+    "loading": "Loading posts",
+    "load-more": "Load more",
+    "load-more-status": "Loading",
+    "message-not-posts": "No posts yet",
+    "message-error-posts": "Failed to load posts!",
+    "min-read": "min read",
+    "read-more": "Read more",
+    "button-text": "Start to use Asterium",
+    "created": "Created",
+    "updated": "Updated"
+  },
+  "not-found": {
+    "title": "Page not found",
+    "text": "But we will help you get back to the desired point on the route",
+    "post-text": "This post does not exist or has been delete",
+    "button-next": "Return to home page"
+  },
+  "icon": {
+    "icon-pointing": "Icon pointing to content",
+    "experts-icon": "Experts icon",
+    "chat-icon": "Chat icon",
+    "document-icon": "Document icon",
+    "achievement-icon": "Achievement icon",
+    "logo-icon": "Logo icon",
+    "armenian-code-icon": "Armenian code academy partner icon",
+    "mdis-icon": "MDIS Tashkent partner icon",
+    "asterium-icon": "Asterium icon",
+    "planet-icon": "Planet icon for language selection",
+    "instagram-icon": "Instagram icon",
+    "telegram-icon": "Telegram icon",
+    "youtube-icon": "YouTube icon"
+  },
+  "metadata": {
+    "url": "en",
+    "title": "Asterium - the leading cryptocurrency exchange in Uzbekistan",
+    "authors": "Asterium Team",
+    "description": "The largest cryptocurrency exchange in Uzbekistan",
+    "keywords": {
+      "asterium": "Asterium",
+      "crypto-exchange": "crypto exchange",
+      "cryptocurrency": "cryptocurrency",
+      "bitcoin": "Bitcoin",
+      "uzbekistan": "Uzbekistan",
+      "blockchain": "blockchain",
+      "crypto-trading": "crypto trading",
+      "tashkent": "Tashkent"
+    },
+    "creator": "Asterium Team",
+    "publisher": "Asterium",
+    "open-graph": {
+      "type": "website",
+      "locale": "en_US",
+      "description": "Trade, buy, and store cryptocurrencies securely with Asterium — the most trusted crypto platform in Uzbekistan.",
+      "images": {
+        "alt": "Asterium — Cryptocurrency Exchange"
+      }
+    }
+  }
+}

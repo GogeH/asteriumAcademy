@@ -2,16 +2,16 @@ import { TNavItem } from '@/types/nav';
 
 export const BUTTON_LIST: TNavItem[] = [
   {
-    text: 'What us web3?',
     anchor: 'web3',
+    translationKey: 'nav.item2',
   },
   {
-    text: 'Blog',
     anchor: 'blog',
+    translationKey: 'nav.item1',
   },
   {
-    text: 'Community',
     anchor: 'community',
+    translationKey: 'nav.item3',
     isIcon: true,
     isLink: true,
   },

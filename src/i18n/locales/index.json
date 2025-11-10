@@ -1,0 +1,443 @@
+{
+  "ru": {
+    "gosha": "Георгий",
+    "nav": {
+      "item1": "Блог",
+      "item2": "Что такое web3?",
+      "item3": "Сообщество"
+    },
+    "title-page": {
+      "item1": "Начните своё",
+      "item2": "Путешествие"
+    },
+    "slogan": "Расширение возможностей следующего поколения разработчиков, мыслителей и творцов Web3",
+    "footer": {
+      "contact": "Контакты",
+      "address": "Адрес головного офиса",
+      "address-country": "Республика Узбекистан",
+      "address-info": "г.Ташкент, улица Саид Барака 12А",
+      "mail": "Электронная почта",
+      "helpline": "Телефон доверия",
+      "about-platform": "О платформе",
+      "list-about-platform": {
+        "products": "Продукты",
+        "ecosystem": "Экосистема",
+        "team": "Команда"
+      },
+      "to-user": "Пользователю",
+      "list-to-user": {
+        "support": "Поддержка",
+        "knowledge-base": "База знаний",
+        "blog": "Блог",
+        "faq": "FAQ"
+      },
+      "documents": "Документы",
+      "list-documents": {
+        "user-agreement": "Пользовательское соглашение",
+        "policy-confidentiality": "Политика конфиденциальности",
+        "license": "Лецензия"
+      }
+    },
+    "faq": {
+      "title": "Часто задаваемые вопросы",
+      "list-question": {
+        "question1": "Безопасно ли хранить средства на Asterium?",
+        "question2": "Как быстро проходит обмен?",
+        "question3": "Нужна ли верификация личности?",
+        "question4": "Есть ли комиссии при выводе?"
+      },
+      "list-answer": {
+        "answer1": "Безопасность — наш главный приоритет. Мы используем передовые технологии защиты данных и средств пользователей, а также строго соблюдаем законодательство Узбекистана в сфере оборота крипто-активов.",
+        "answer2-1": "Пополнение и вывод возможны с использованием банковских карт HUMO/VISA/Mastercard в фиатной валюте UZS и USD. Также можете пополнять с касс нашего партнера Garant bank или с использованием SWIFT с любой точки мира.",
+        "answer2-2": "Доступны ещё получение и отправка(on/off chain) крипто-активов на общее известные биржи и некастодиальные кошельки.",
+        "answer2-3": "Вывод средств в фиатной валюте доступен на карты HUMO, а крипто-активы вы можете выводить на общее известные биржи и некастодиальные кошельки.",
+        "answer3": "Процедура KYC (проверка личности) зависит от гражданства пользователя. Регистрация доступна только пользователям старше 18 лет, а подробные инструкции будут предоставлены в процессе регистрации.",
+        "answer4": "Комиссии зависят от типа транзакции и крипто-актива. Подробная информация о тарифах будет доступна после регистрации на платформе."
+      }
+    },
+    "partners": {
+      "title": "Наши партнеры",
+      "text": "Повысьте ценность и достоверность вашего обучения с помощью наших сертификатов"
+    },
+    "video": {
+      "title": "Asterium Серия видео о Web3",
+      "link-text": "Посетите наш канал на YouTube",
+      "video-title1": "Что такое web3? Краткое визуальное введение",
+      "video-title2": "Руководство по блокчейну для начинающих инженеров",
+      "video-title3": "Руководство по блокчейну для начинающих инженеров"
+    },
+    "advantage": {
+      "title": "Почему asterium академия?",
+      "advantage-list": {
+        "title-item1": "Контент под руководством экспертов",
+        "title-item2": "Доступ сообщества",
+        "title-item3": "Интерактивное обучение",
+        "title-item4": "Сертификаты достижений",
+        "text-item1": "Учитесь у отраслевых экспертов с многолетним опытом.",
+        "text-item2": "Учитесь у отраслевых экспертов с многолетним опытом.",
+        "text-item3": "Учитесь у отраслевых экспертов с многолетним опытом.",
+        "text-item4": "Bizning sertifikatlarimiz bilan o'qish safaringizga qiymat va ishonchlilik qo'shing."
+      }
+    },
+    "post": {
+      "title": "Трекер уроков",
+      "text": "Расширение прав и возможностей следующего поколения разработчиков, мыслителей и творцов Web3.",
+      "select1": "Выберите категорию",
+      "select2": "Убрать категорию",
+      "select3": "Новичок",
+      "select4": "Продвинутый",
+      "select5": "Средний",
+      "loading": "Загрузка постов",
+      "load-more": "Загрузить еще",
+      "load-more-status": "Загрузка",
+      "message-not-posts": "Пока нет постов",
+      "message-error-posts": "Не получилось загрузить посты!",
+      "min-read": "минут читать",
+      "read-more": "Читать далее",
+      "button-text": "Начните использовать Астериум",
+      "created": "Создан",
+      "updated": "Обновлен"
+    },
+    "not-found": {
+      "title": "Страница не найдена",
+      "text": "Но мы поможем вернуться к нужной точке маршрута",
+      "post-text": "Такого поста нет или он удалён",
+      "button-next": "Вернуться на главную"
+    },
+    "icon": {
+      "icon-pointing": "Иконка указывающая на контент",
+      "experts-icon": "Иконка экспертов",
+      "chat-icon": "Иконка чата",
+      "document-icon": "Иконка документа",
+      "achievement-icon": "Иконка достижений",
+      "logo-icon": "Иконка логотипа",
+      "armenian-code-icon": "Иконка партнёра Armenian code academy",
+      "mdis-icon": "Иконка партнёра MDIS Tashkent",
+      "asterium-icon": "Иконка астериум",
+      "planet-icon": "Иконка планеты для выбора языка",
+      "instagram-icon": "Иконка инстагама",
+      "telegram-icon": "Иконка телеграма",
+      "youtube-icon": "Иконка ютуба"
+    },
+    "metadata": {
+      "url": "ru",
+      "title": "Астериум — ведущая криптовалютная биржа в Узбекистане",
+      "authors": "Команда Астериум",
+      "description": "The largest cryptocurrency exchange in Uzbekistan",
+      "keywords": {
+        "asterium": "Астериум",
+        "crypto-exchange": "криптобиржа",
+        "cryptocurrency": "криптовалюта",
+        "bitcoin": "Биткойн",
+        "uzbekistan": "Узбекистан",
+        "blockchain": "блокчейн",
+        "crypto-trading": "криптоторговля",
+        "tashkent": "Ташкент"
+      },
+      "creator": "Команда Астериум",
+      "publisher": "Астериум",
+      "open-graph": {
+        "type": "веб-сайт",
+        "locale": "ru_RU",
+        "description": "Торгуйте, покупайте и храните криптовалюты безопасно с Asterium — самой надежной криптоплатформой в Узбекистане.",
+        "images": {
+          "alt": "Астериум — Криптовалютная биржа"
+        }
+      }
+    }
+  },
+  "en": {
+    "gosha": "George",
+    "nav": {
+      "item1": "Blog",
+      "item2": "What is web3?",
+      "item3": "Community"
+    },
+    "title-page": {
+      "item1": "Start your",
+      "item2": "Journey"
+    },
+    "slogan": "Empowering the next generation of Web3 builders, thinkers, and creators",
+    "footer": {
+      "contact": "Contacts",
+      "address": "Head office address",
+      "address-country": "Republic of Uzbekistan",
+      "address-info": "Tashkent, Said Baraka Street 12A",
+      "mail": "E-mail",
+      "helpline": "Helpline",
+      "about-platform": "About the platform",
+      "list-about-platform": {
+        "products": "Products",
+        "ecosystem": "Ecosystem",
+        "team": "Team"
+      },
+      "to-user": "Foydalanuvchiga",
+      "list-to-user": {
+        "support": "Support",
+        "knowledge-base": "Knowledge Base",
+        "blog": "Blog",
+        "faq": "FAQ"
+      },
+      "documents": "Documents",
+      "list-documents": {
+        "user-agreement": "User Agreement",
+        "policy-confidentiality": "Policy confidentiality",
+        "license": "License"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "list-question": {
+        "question1": "Is it safe to store funds on Asterium?",
+        "question2": "How fast does the exchange take place?",
+        "question3": "Is identity verification required?",
+        "question4": "Are there any fees for withdrawals?"
+      },
+      "list-answer": {
+        "answer1": "Security is our top priority. We use advanced technologies to protect user data and funds, and strictly adhere to Uzbek legislation regarding cryptocurrency transactions.",
+        "answer2-1": "Deposits and withdrawals are available using HUMO/VISA/Mastercard bank cards in UZS and USD fiat currencies. You can also deposit funds from our partner Garant Bank or via SWIFT from anywhere in the world.",
+        "answer2-2": "It is also possible to receive and send (on/off chain) crypto assets to well-known exchanges and non-custodial wallets.",
+        "answer2-3": "Fiat currency withdrawals are available to HUMO cards, and crypto assets can be withdrawn to well-known exchanges and non-custodial wallets.",
+        "answer3": "The KYC (identity verification) procedure depends on the user's citizenship. Registration is only available to users over 18 years of age, and detailed instructions will be provided during the registration process.",
+        "answer4": "Fees depend on the transaction type and crypto asset. Detailed fee information will be available after registering on the platform."
+      }
+    },
+    "partners": {
+      "title": "Our partners",
+      "text": "Add value and credibility to your learning journey with our Certificates"
+    },
+    "video": {
+      "title": "Asterium Web3 Video Series",
+      "link-text": "Visit Our YouTube Channel",
+      "video-title1": "What is web3? Fast Visual Intro",
+      "video-title2": "A beginner’s guide to blockchain for engineers",
+      "video-title3": "A beginner’s guide to blockchain for engineers"
+    },
+    "advantage": {
+      "title": "Why asterium academy?",
+      "advantage-list": {
+        "title-item1": "Expert-Led Content",
+        "title-item2": "Community access",
+        "title-item3": "Interactive Learning",
+        "title-item4": "Certificates of Achievement",
+        "text-item1": "Learn from industry experts with years of experience.",
+        "text-item2": "Learn from industry experts with years of experience.",
+        "text-item3": "Learn from industry experts with years of experience.",
+        "text-item4": "Add value and credibility to your learning journey with our Certificates."
+      }
+    },
+    "post": {
+      "title": "Lessons tracker",
+      "text": "Empowering the next generation of Web3 builders, thinkers, and creators.",
+      "select1": "Select a category",
+      "select2": "Remove a category",
+      "select3": "Beginner",
+      "select4": "Advanced",
+      "select5": "Intermediate",
+      "loading": "Loading posts",
+      "load-more": "Load more",
+      "load-more-status": "Loading",
+      "message-not-posts": "No posts yet",
+      "message-error-posts": "Failed to load posts!",
+      "min-read": "min read",
+      "read-more": "Read more",
+      "button-text": "Start to use Asterium",
+      "created": "Created",
+      "updated": "Updated"
+    },
+    "not-found": {
+      "title": "Page not found",
+      "text": "But we will help you get back to the desired point on the route",
+      "post-text": "This post does not exist or has been delete",
+      "button-next": "Return to home page"
+    },
+    "icon": {
+      "icon-pointing": "Icon pointing to content",
+      "experts-icon": "Experts icon",
+      "chat-icon": "Chat icon",
+      "document-icon": "Document icon",
+      "achievement-icon": "Achievement icon",
+      "logo-icon": "Logo icon",
+      "armenian-code-icon": "Armenian code academy partner icon",
+      "mdis-icon": "MDIS Tashkent partner icon",
+      "asterium-icon": "Asterium icon",
+      "planet-icon": "Planet icon for language selection",
+      "instagram-icon": "Instagram icon",
+      "telegram-icon": "Telegram icon",
+      "youtube-icon": "YouTube icon"
+    },
+    "metadata": {
+      "url": "en",
+      "title": "Asterium - the leading cryptocurrency exchange in Uzbekistan",
+      "authors": "Asterium Team",
+      "description": "The largest cryptocurrency exchange in Uzbekistan",
+      "keywords": {
+        "asterium": "Asterium",
+        "crypto-exchange": "crypto exchange",
+        "cryptocurrency": "cryptocurrency",
+        "bitcoin": "Bitcoin",
+        "uzbekistan": "Uzbekistan",
+        "blockchain": "blockchain",
+        "crypto-trading": "crypto trading",
+        "tashkent": "Tashkent"
+      },
+      "creator": "Asterium Team",
+      "publisher": "Asterium",
+      "open-graph": {
+        "type": "website",
+        "locale": "en_US",
+        "description": "Trade, buy, and store cryptocurrencies securely with Asterium — the most trusted crypto platform in Uzbekistan.",
+        "images": {
+          "alt": "Asterium — Cryptocurrency Exchange"
+        }
+      }
+    }
+  },
+  "uz": {
+    "gosha": "Georgiy",
+    "nav": {
+      "item1": "Yangiliklar",
+      "item2": "Web3 nima?",
+      "item3": "Jamiyat"
+    },
+    "title-page": {
+      "item1": "Boshlang",
+      "item2": "Sayohat"
+    },
+    "slogan": "Web3 quruvchilari, mutafakkirlari va ijodkorlarining keyingi avlodini qo'llab-quvvatlash",
+    "footer": {
+      "contact": "Kontaktlar",
+      "address": "Bosh ofis manzili",
+      "address-country": "O'zbekiston Respublikasi",
+      "address-info": "Toshkent, Said Baraka ko'chasi 12A",
+      "mail": "Elektron pochta",
+      "helpline": "Ishonch telefoni",
+      "about-platform": "Platforma haqida",
+      "list-about-platform": {
+        "products": "Mahsulotlar",
+        "ecosystem": "Ekotizim",
+        "team": "Jamoa"
+      },
+      "to-user": "To the user",
+      "list-to-user": {
+        "support": "Qo'llab-quvvatlash",
+        "knowledge-base": "Bilimlar bazasi",
+        "blog": "Blog",
+        "faq": "Savollar va javoblar"
+      },
+      "documents": "Hujjatlar",
+      "list-documents": {
+        "user-agreement": "Foydalanuvchi shartnomasi",
+        "policy-confidentiality": "Maxfiylik siyosati",
+        "license": "Litsenziya"
+      }
+    },
+    "faq": {
+      "title": "Chasto zavaemye savol",
+      "list-question": {
+        "question1": "Bezopasno li xranit sredstva na Asterium?",
+        "question2": "Almashinuv qanchalik tez sodir bo'ladi?",
+        "question3": "Shaxsni tasdiqlash shartmi?",
+        "question4": "Pul yechib olish uchun biron bir to'lov bormi?"
+      },
+      "list-answer": {
+        "answer1": "Xavfsizlik bizning ustuvor vazifamizdir. Biz foydalanuvchi ma'lumotlari va mablag'larini himoya qilish uchun ilg'or texnologiyalardan foydalanamiz va kriptovalyuta operatsiyalariga oid O'zbekiston qonunchiligiga qat'iy rioya qilamiz.",
+        "answer2-1": "Omonatlar va pul yechish HUMO/VISA/Mastercard bank kartalari orqali so'm va AQSh dollari fiat valyutalarida amalga oshiriladi. Shuningdek, siz mablag'larni bizning hamkorimiz Garant Bankdan yoki dunyoning istalgan nuqtasidan SWIFT orqali kiritishingiz mumkin.",
+        "answer2-2": "Shuningdek, taniqli birjalar va depozitariy bo'lmagan hamyonlarga (zanjirda/zanjirdan tashqari) kripto aktivlarini qabul qilish va yuborish mumkin.",
+        "answer2-3": "Fiat valyutasini HUMO kartalari orqali yechib olish mumkin, kripto aktivlarini esa taniqli birjalar va depozitga qo'yilmagan hamyonlarga yechib olish mumkin.",
+        "answer3": "KYC (shaxsni tasdiqlash) protsedurasi foydalanuvchining fuqaroligiga bog'liq. Ro'yxatdan o'tish faqat 18 yoshdan oshgan foydalanuvchilar uchun mavjud va ro'yxatdan o'tish jarayonida batafsil ko'rsatmalar beriladi.",
+        "answer4": "To'lovlar tranzaksiya turiga va kripto aktiviga bog'liq. To'lov haqida batafsil ma'lumot platformada ro'yxatdan o'tgandan so'ng mavjud bo'ladi."
+      }
+    },
+    "partners": {
+      "title": "Bizning hamkorlarimiz",
+      "text": "Bizning sertifikatlarimiz bilan o'qish safaringizga qiymat va ishonchlilik qo'shing"
+    },
+    "video": {
+      "title": "Asterium Web3 video seriyasi",
+      "link-text": "YouTube kanalimizga tashrif buyuring",
+      "video-title1": "Web3 nima? Tezkor vizual kirish",
+      "video-title2": "Muhandislar uchun blokcheyn bo'yicha yangi boshlanuvchilar uchun qo'llanma",
+      "video-title3": "Muhandislar uchun blokcheyn bo'yicha yangi boshlanuvchilar uchun qo'llanma"
+    },
+    "advantage": {
+      "title": "Nima uchun asterium akademiyasi?",
+      "advantage-list": {
+        "title-item1": "Mutaxassislar tomonidan boshqariladigan kontent",
+        "title-item2": "Jamiyatga kirish",
+        "title-item3": "Interaktiv o'rganish",
+        "title-item4": "Yutuq sertifikatlari",
+        "text-item1": "Ko'p yillik tajribaga ega sanoat mutaxassislaridan o'rganing.",
+        "text-item2": "Ko'p yillik tajribaga ega sanoat mutaxassislaridan o'rganing.",
+        "text-item3": "Ko'p yillik tajribaga ega sanoat mutaxassislaridan o'rganing.",
+        "text-item4": "Bizning sertifikatlarimiz bilan o'qish safaringizga qiymat va ishonchlilik qo'shing."
+      }
+    },
+    "post": {
+      "title": "Darslarni kuzatuvchi",
+      "text": "Web3 quruvchilari, mutafakkirlari va ijodkorlarining keyingi avlodini qo'llab-quvvatlash.",
+      "select1": "Kategoriyani tanlang",
+      "select2": "Kategoriyani olib tashlash",
+      "select3": "Boshlang'ich",
+      "select4": "Ilg'or",
+      "select5": "O'rta",
+      "loading": "Xabarlar yuklanmoqda",
+      "load-more": "Ko'proq yuklang",
+      "load-more-status": "Yuklanmoqda",
+      "message-not-posts": "Hali postlar yo'q",
+      "message-error-posts": "Xabarlarni yuklab bo'lmadi!",
+      "min-read": "minimal o'qish",
+      "read-more": "Ko'proq o'qish",
+      "button-text": "Asteriumdan foydalanishni boshlang",
+      "created": "Yaratilgan",
+      "updated": "Yangilandi"
+    },
+    "not-found": {
+      "title": "Sahifa topilmadi",
+      "text": "Lekin biz sizga marshrutdagi kerakli nuqtaga qaytishingizga yordam beramiz",
+      "post-text": "Bu post mavjud emas yoki o'chirilgan",
+      "button-next": "Bosh sahifaga qaytish"
+    },
+    "icon": {
+      "icon-pointing": "Kontentga ishora qiluvchi belgi",
+      "experts-icon": "Mutaxassislar belgisi",
+      "chat-icon": "Chat belgisi",
+      "document-icon": "Hujjat belgisi",
+      "achievement-icon": "Yutuq belgisi",
+      "logo-icon": "Logotip belgisi",
+      "armenian-code-icon": "Arman kod akademiyasi hamkor belgisi",
+      "mdis-icon": "MDIS Tashkent hamkor belgisi",
+      "asterium-icon": "Asterium belgisi",
+      "planet-icon": "Til tanlash uchun sayyora belgisi",
+      "instagram-icon": "Instagram belgisi",
+      "telegram-icon": "Telegram belgisi",
+      "youtube-icon": "YouTube belgisi"
+    },
+    "metadata": {
+      "url": "uz",
+      "title": "Asterium - O'zbekistondagi yetakchi kriptovalyuta birjasi",
+      "authors": "Asterium jamoasi",
+      "description": "O'zbekistondagi eng yirik kriptovalyuta birjasi",
+      "keywords": {
+        "asterium": "Asterium",
+        "crypto-exchange": "kripto birjasi",
+        "cryptocurrency": "kriptovalyuta",
+        "bitcoin": "Bitcoin",
+        "uzbekistan": "O'zbekiston",
+        "blockchain": "blokcheyn",
+        "crypto-trading": "kripto savdosi",
+        "tashkent": "Toshkent"
+      },
+      "creator": "Asterium jamoasi",
+      "publisher": "Asterium",
+      "open-graph": {
+        "type": "veb-sayt",
+        "locale": "uz_UZ",
+        "description": "O'zbekistondagi eng ishonchli kripto platformasi bo'lgan Asterium bilan kriptovalyutalarni xavfsiz tarzda savdo qiling, sotib oling va saqlang.",
+        "images": {
+          "alt": "Asterium — Kriptovalyuta birjasi"
+        }
+      }
+    }
+  }
+}

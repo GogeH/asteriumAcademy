@@ -2,14 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-const CATEGORIES = [
-  { id: 'Not category', name: 'Select a category' },
-  { id: 'beginner', name: 'Beginner' },
-  { id: 'advanced', name: 'Advanced' },
-  { id: 'intermediate', name: 'Intermediate' },
-] as const;
+type TCategorySelectProps = {
+  categories: Array<{ id: string; name: string }>;
+};
 
-export default function CategorySelect() {
+export default function CategorySelect({ categories }: TCategorySelectProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -53,12 +50,45 @@ export default function CategorySelect() {
     };
   }, [isOpen]);
 
-  const selectedName =
-    CATEGORIES.find((category) => category.id === selectedCategory)?.name ||
-    'Select a category';
+  const getFilteredCategories = () => {
+    const selectCategoryItem = categories[0];
+    const notCategoryItem = categories[1];
+    const levelCategories = categories.slice(2);
 
+    if (selectedCategory === '' || selectedCategory === selectCategoryItem.id) {
+      return levelCategories;
+    } else {
+      return [notCategoryItem, ...levelCategories];
+    }
+  };
+
+  const filteredCategories = getFilteredCategories();
+
+  const getButtonText = () => {
+    if (selectedCategory === '' || selectedCategory === categories[0].id) {
+      return categories[0].name;
+    } else if (selectedCategory === categories[1].id) {
+      return categories[0].name;
+    } else {
+      const selected = categories.find((cat) => cat.id === selectedCategory);
+      return selected?.name || categories[0].name;
+    }
+  };
+
+  const buttonText = getButtonText();
   const isNotCategorySelected =
-    selectedCategory === CATEGORIES[0].id || selectedCategory === '';
+    selectedCategory === '' ||
+    selectedCategory === categories[0].id ||
+    selectedCategory === categories[1].id;
+
+  const handleCategorySelect = (categoryId: string) => {
+    if (categoryId === categories[1].id) {
+      setSelectedCategory('');
+    } else {
+      setSelectedCategory(categoryId);
+    }
+    setIsOpen(false);
+  };
 
   return (
     <div
@@ -75,7 +105,7 @@ export default function CategorySelect() {
         <span
           className={isNotCategorySelected ? 'text-gray-400' : 'text-white'}
         >
-          {selectedName}
+          {buttonText}
         </span>
 
         <svg
@@ -97,7 +127,7 @@ export default function CategorySelect() {
           role="listbox"
           aria-labelledby="category-select"
         >
-          {CATEGORIES.map((category) => (
+          {filteredCategories.map((category) => (
             <div
               key={category.id}
               className="relative w-[212px] h-[38px] mx-auto mb-1"
@@ -119,15 +149,11 @@ export default function CategorySelect() {
 
               <button
                 type="button"
-                onClick={() => {
-                  setSelectedCategory(category.id);
-                  setIsOpen(false);
-                }}
+                onClick={() => handleCategorySelect(category.id)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    setSelectedCategory(category.id);
-                    setIsOpen(false);
+                    handleCategorySelect(category.id);
                   }
                   if (e.key === 'Escape') {
                     setIsOpen(false);
@@ -141,11 +167,7 @@ export default function CategorySelect() {
                     : 'opacity-70 bg-transparent'
                 }`}
               >
-                <span className="text-white">
-                  {category.name === CATEGORIES[0].name
-                    ? CATEGORIES[0].id
-                    : category.name}
-                </span>
+                <span className="text-white">{category.name}</span>
                 {selectedCategory === category.id && (
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path

@@ -1,9 +1,5 @@
 import Link from 'next/link';
-import {
-  HEADING_BASE,
-  INFO,
-  SUB_HEADING,
-} from '@/components/common/Footer/Footer';
+import { HEADING_BASE, SUB_HEADING } from '@/components/common/Footer/Footer';
 
 type TListItem = {
   readonly name: string;
@@ -14,13 +10,14 @@ type TInfoProps = {
   info: {
     readonly title: string;
     readonly list: readonly TListItem[];
+    readonly isLastTitle?: boolean;
   };
 };
 
 export default function Info({ info }: TInfoProps) {
   return (
     <div
-      className={`${info.title === INFO[2].title && '-ml-3'} max-lg:min-w-[105px] max-lg:ml-0`}
+      className={`${info.isLastTitle && '-ml-3'} max-lg:min-w-[105px] max-lg:ml-0`}
     >
       <h3 className={`${HEADING_BASE} mb-4`}>{info.title}</h3>
       <ul role="list">

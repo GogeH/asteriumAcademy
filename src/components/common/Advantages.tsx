@@ -1,12 +1,14 @@
 import Image from 'next/image';
+import { useTranslation } from '@/app/i18n';
 
 const ADVANTAGE_LIST = [
   {
-    TITLE: 'Expert-Led Content',
-    TEXT: 'Learn from industry experts with years of experience.',
-    ICON_PATH: '/images/volume-big.webp',
-    ICON_BIG_PATH: '/images/volume.webp',
-    ICON_ALT: 'Иконка экспертов',
+    id: 0,
+    titleKey: 'title-item1',
+    textKey: 'text-item1',
+    iconPath: '/images/volume-big.webp',
+    iconBigPath: '/images/volume.webp',
+    iconAltKey: 'experts-icon',
     width: {
       bigSize: 84,
       smallSize: 138,
@@ -17,11 +19,12 @@ const ADVANTAGE_LIST = [
     },
   },
   {
-    TITLE: 'Community access',
-    TEXT: 'Learn from industry experts with years of experience.',
-    ICON_PATH: '/images/chat-big.webp',
-    ICON_BIG_PATH: '/images/chat.webp',
-    ICON_ALT: 'Иконка чата',
+    id: 1,
+    titleKey: 'title-item2',
+    textKey: 'text-item2',
+    iconPath: '/images/chat-big.webp',
+    iconBigPath: '/images/chat.webp',
+    iconAltKey: 'chat-icon',
     width: {
       bigSize: 89,
       smallSize: 106,
@@ -32,11 +35,12 @@ const ADVANTAGE_LIST = [
     },
   },
   {
-    TITLE: 'Interactive Learning',
-    TEXT: 'Learn from industry experts with years of experience.',
-    ICON_PATH: '/images/document-big.webp',
-    ICON_BIG_PATH: '/images/document.webp',
-    ICON_ALT: 'Иконка документа',
+    id: 2,
+    titleKey: 'title-item3',
+    textKey: 'text-item3',
+    iconPath: '/images/document-big.webp',
+    iconBigPath: '/images/document.webp',
+    iconAltKey: 'document-icon',
     width: {
       bigSize: 82,
       smallSize: 103,
@@ -47,11 +51,12 @@ const ADVANTAGE_LIST = [
     },
   },
   {
-    TITLE: 'Certificates of Achievement',
-    TEXT: 'Add value and credibility to your learning journey with our Certificates',
-    ICON_PATH: '/images/tick-big.webp',
-    ICON_BIG_PATH: '/images/tick.webp',
-    ICON_ALT: 'Иконка достижений',
+    id: 3,
+    titleKey: 'title-item4',
+    textKey: 'text-item4',
+    iconPath: '/images/tick-big.webp',
+    iconBigPath: '/images/tick.webp',
+    iconAltKey: 'achievement-icon',
     width: {
       bigSize: 84,
       smallSize: 110,
@@ -63,7 +68,13 @@ const ADVANTAGE_LIST = [
   },
 ] as const;
 
-export default function Advantages() {
+type TAdvantagesProps = {
+  lng: string;
+};
+
+export default async function Advantages({ lng }: TAdvantagesProps) {
+  const { t } = await useTranslation(lng);
+
   return (
     <section
       aria-labelledby="advantages-title"
@@ -78,7 +89,7 @@ export default function Advantages() {
           className="font-medium text-[80px] leading-[100%] tracking-[-0.04em] ml-6 text-center uppercase bg-gradient-to-r from-accent-green to-accent-yellow
         bg-clip-text text-transparent max-lg:text-[64px] max-lg:text-left max-lg:ml-0 max-sm:text-[40px]"
         >
-          why asterium academy?
+          {t('advantage.title')}
         </h2>
       </div>
       <ul
@@ -86,18 +97,18 @@ export default function Advantages() {
        max-lg:grid-cols-1 max-lg:px-10 max-lg:pt-36 max-lg:gap-24 max-sm:pt-20 max-sm:gap-9 max-sm:pb-19"
         role="list"
       >
-        {ADVANTAGE_LIST.map((advantage, index) => (
+        {ADVANTAGE_LIST.map((advantage) => (
           <li
-            key={advantage.TITLE}
+            key={advantage.titleKey}
             className={`
               flex max-lg:flex-row-reverse max-lg:justify-between max-sm:flex-col items-center
-              ${index === 1 ? 'max-lg:row-start-3 max-sm:row-start-2' : ''}
-              ${index === 2 ? 'max-lg:row-start-2 max-sm:row-start-3' : ''}
+              ${advantage.id === 1 ? 'max-lg:row-start-3 max-sm:row-start-2' : ''}
+              ${advantage.id === 2 ? 'max-lg:row-start-2 max-sm:row-start-3' : ''}
               
       `}
           >
             <article
-              className={`mr-9 ${index === 0 ? 'max-lg:mr-0' : 'max-lg:mr-8  max-sm:mr-0'} max-sm:mb-9`}
+              className={`mr-9 ${advantage.id === 0 ? 'max-lg:mr-0' : 'max-lg:mr-8  max-sm:mr-0'} max-sm:mb-9`}
             >
               <div
                 className="flex-shrink-0 max-lg:hidden"
@@ -107,8 +118,8 @@ export default function Advantages() {
                 }}
               >
                 <Image
-                  src={advantage.ICON_PATH}
-                  alt={advantage.ICON_ALT}
+                  src={advantage.iconPath}
+                  alt={t(`icon.${advantage.iconAltKey}`)}
                   width={advantage.width.bigSize}
                   height={advantage.height.bigSize}
                 />
@@ -122,19 +133,19 @@ export default function Advantages() {
                 }}
               >
                 <Image
-                  src={advantage.ICON_BIG_PATH}
-                  alt={advantage.ICON_ALT}
+                  src={advantage.iconBigPath}
+                  alt={t(`icon.${advantage.iconAltKey}`)}
                   width={advantage.width.smallSize}
                   height={advantage.height.smallSize}
                 />
               </div>
             </article>
             <div className="max-sm:text-center">
-              <h4 className="font-bold text-[32px] leading-[100%] tracking-[-0.04em] uppercase text-white mb-5 max-sm:text-[24px]">
-                {advantage.TITLE}
+              <h4 className="break-all font-bold text-[32px] leading-[100%] tracking-[-0.04em] uppercase text-white mb-5 max-sm:text-[24px]">
+                {t(`advantage.advantage-list.${advantage.titleKey}`)}
               </h4>
               <p className="font-normal text-base leading-[131.25%] tracking-normal align-middle text-silver max-lg:max-w-[368px] max-sm:text-[16px]">
-                {advantage.TEXT}
+                {t(`advantage.advantage-list.${advantage.textKey}`)}
               </p>
             </div>
           </li>
