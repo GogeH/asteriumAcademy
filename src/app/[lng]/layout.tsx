@@ -1,3 +1,4 @@
+// app/[lng]/layout.tsx
 import { ReactNode } from 'react';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
@@ -9,11 +10,44 @@ type Props = {
 
 const SUPPORTED_LANGUAGES = ['ru', 'en', 'uz'];
 
+export async function generateStaticParams() {
+  return [{ lng: 'ru' }, { lng: 'en' }, { lng: 'uz' }];
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lng } = await params;
 
   const { useTranslation } = await import('@/app/i18n');
   const { t } = await useTranslation(lng);
+
+  const siteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Asterium',
+    description: t('metadata.description'),
+    url: 'https://asterium.uz',
+    logo: 'https://asterium.uz/images/png/logo.png',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+998 78 777-55-58',
+      email: 'support@asterium.uz',
+      contactType: 'customer service',
+    },
+    sameAs: [
+      'https://facebook.com/p/Asterium-Wallet-61574643916530',
+      'https://instagram.com/asteriumwallet',
+      'https://www.youtube.com/@AsteriumWallet',
+      'https://t.me/asteriumwallet',
+      'https://www.linkedin.com/company/asteriumuz',
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: t('footer.address-info'),
+      addressLocality: t('metadata.keywords.tashkent'),
+      addressCountry: 'UZ',
+      postalCode: '100105',
+    },
+  };
 
   const localeMap = {
     ru: 'ru_RU',
@@ -88,25 +122,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'uz-UZ': 'https://asterium.uz/uz',
       },
     },
-    icons: {
-      icon: [
-        { url: '/favicon/favicon.ico' },
-        { url: '/favicon/favicon-16x16.png', sizes: '16x16' },
-        { url: '/favicon/favicon-32x32.png', sizes: '32x32' },
-      ],
-      apple: [{ url: '/favicon/apple-touch-icon.png' }],
-      other: [
-        {
-          rel: 'android-chrome-192x192',
-          url: '/favicon/android-chrome-192x192.png',
-        },
-        {
-          rel: 'android-chrome-512x512',
-          url: '/favicon/android-chrome-512x512.png',
-        },
-      ],
+    other: {
+      'script:ld+json': JSON.stringify(siteJsonLd),
     },
-    manifest: '/favicon/site.webmanifest',
   };
 }
 

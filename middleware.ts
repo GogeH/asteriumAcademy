@@ -21,7 +21,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Пропускаем все статические файлы
-    '/((?!_next|api|favicon.ico|sitemap.xml|robots.txt).*)',
+    // Пропускаем ВСЕ статические файлы включая картинки
+    '/((?!_next|api|favicon.ico|sitemap.xml|robots.txt|.*\\.(svg|webp|png|jpg|jpeg|gif|ico|css|js|woff|woff2|ttf)).*)',
   ],
 };
