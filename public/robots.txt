@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://asterium.uz
-
-# Sitemaps
-Sitemap: https://asterium.uz/sitemap.xml

@@ -2,7 +2,6 @@ import Link from 'next/link';
 import VideoPlayer from '@/components/common/Video/VideoPlayer';
 import { useTranslation } from '@/app/i18n';
 
-// Убираем статические заголовки из VIDEO_INFO
 const VIDEO_INFO = [
   {
     id: 1,

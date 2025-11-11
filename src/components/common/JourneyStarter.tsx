@@ -28,13 +28,15 @@ export default async function JourneyStarter({ lng }: TJourneyStarterProps) {
       <p className="w-full font-normal text-base tracking-normal text-center align-middle text-silver max-w-[368px] mx-auto mb-10  max-lg:mb-9">
         {t('slogan')}.
       </p>
-      <Image
-        className="mx-auto block max-lg:hidden"
-        src="/svg/mouse.svg"
-        alt={t('icon.icon-pointing')}
-        width={64}
-        height={64}
-      />
+      <div className="animate-[bounce_2s_ease-in-out_infinite]">
+        <Image
+          className="mx-auto block max-lg:hidden"
+          src="/svg/mouse.svg"
+          alt={t('icon.icon-pointing')}
+          width={64}
+          height={64}
+        />
+      </div>
     </section>
   );
 }

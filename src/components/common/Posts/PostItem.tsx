@@ -25,7 +25,7 @@ export default function PostItem({
       <div className="flex justife-start items-center mb-4">
         <ExperienceBadge experience="Beginner" />
         <p className="font-apercu text-sm leading-[150%]">
-          {'5'} {minRead}
+          {post.Reading_time} {minRead}
         </p>
       </div>
 
@@ -35,8 +35,9 @@ export default function PostItem({
       <p className="opacity-60 mb-6">{post.excerpt}</p>
       <Link
         href={`/${lng}/post/${post.slug}`}
-        className={`mt-auto ${lng === 'en' ? 'max-w-[105px]' : 'max-w-[135px]'} h-[37px] rounded-[24px] py-2 px-4 backdrop-blur-sm bg-[rgba(86,86,86,0.3)] 
-        font-inter font-semibold text-[14px] cursor-pointer flex items-center justify-center`}
+        className={`mt-auto ${lng === 'en' ? 'max-w-[105px]' : 'max-w-[135px]'} h-[37px] rounded-[24px] py-2 px-4 
+        backdrop-blur-sm bg-[rgba(86,86,86,0.3)] font-inter font-semibold text-[14px] cursor-pointer flex items-center 
+        justify-center transition-all duration-300 ease-out hover:bg-[rgba(86,86,86,0.5)] hover:text-gray-300  `}
       >
         {readMore}
       </Link>

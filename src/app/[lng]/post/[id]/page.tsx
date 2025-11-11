@@ -4,12 +4,13 @@ import { PAGINATION_CONFIG } from '@/constants/posts';
 import PostList from '@/components/common/Posts/PostList';
 import BackgroundWrapper from '@/components/common/BackgroundWrapper';
 import { Loading } from '@/components/shared/Loading';
-import Header from '@/components/common/Header/Header';
 import FAQWrapper from '@/components/common/FAQ/FAQWrapper';
 import { useTranslation } from '@/app/i18n';
 import PostContent from '@/components/common/Posts/PostContent';
-import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import NotFoundCustom from '@/components/common/NotFoundCustom';
+import ScrollToTop from '@/components/shared/ScrollToTop';
+import HeaderWrapper from '@/components/common/Header/HeaderWrapper';
 
 type TGenerateMetadataProps = { params: { id: string } };
 
@@ -21,23 +22,23 @@ export async function generateMetadata({
 
   const previewImageUrl = post.Preview_Image
     ? `https://cms.asterium.uz/assets/${post.Preview_Image}`
-    : 'https://asterium.uz/favicon/android-chrome-512x512.png';
+    : 'https://asterium-academy/favicon/android-chrome-512x512.png';
 
   return {
     title: post.title,
     description: post.excerpt || post.content.slice(0, 160),
     alternates: {
-      canonical: `https://asterium.uz/post/${params.id}`,
+      canonical: `https://asterium-academy/post/${params.id}`,
       languages: {
-        'en-US': `https://asterium.uz/en/post/${params.id}`,
-        'ru-RU': `https://asterium.uz/ru/post/${params.id}`,
-        'uz-UZ': `https://asterium.uz/uz/post/${params.id}`,
+        'en-US': `https://asterium-academy/en/post/${params.id}`,
+        'ru-RU': `https://asterium-academy/ru/post/${params.id}`,
+        'uz-UZ': `https://asterium-academy/uz/post/${params.id}`,
       },
     },
     openGraph: {
       title: post.title,
       description: post.excerpt || post.content.slice(0, 160),
-      url: `https://asterium.uz/post/${params.id}`,
+      url: `asterium-academy/post/${params.id}`,
       images: [
         {
           url: previewImageUrl,
@@ -75,24 +76,25 @@ export default async function PostPage({ params }: TPostPageProps) {
 
   const decodedId = decodeURIComponent(id);
 
-  const post = await postsService.getBySlug(decodedId);
+  const post = await postsService.getBySlug(decodedId, lng);
 
   const shortPostList = await postsService
-    .getAll(
+    .getAllServerComponent(
       PAGINATION_CONFIG.INITIAL_PAGE_NUMBER,
       PAGINATION_CONFIG.PAGE_SHORT_SIZE,
+      lng,
     )
     .catch(() => null);
 
   if (!post) {
-    notFound();
+    return <NotFoundCustom lng={lng} />;
   }
 
   return (
     <>
       <BackgroundWrapper className="max-sm:bg-none">
-        <Header isPostPage lng={lng} />
-        <main className="mx-auto px-28 max-lg:px-16 max-sm:px-4">
+        <HeaderWrapper isPostPage lng={lng} />
+        <main className="mx-auto px-28 max-lg:px-16 max-sm:px-4 mt-63 max-lg:mt-38 max-sm:mt-32">
           <PostContent
             lng={lng}
             title={post.title}
@@ -122,6 +124,7 @@ export default async function PostPage({ params }: TPostPageProps) {
           <FAQWrapper isPostPage lng={lng} />
         </main>
         <Footer isPostPage lng={lng} />
+        <ScrollToTop />
       </BackgroundWrapper>
     </>
   );
