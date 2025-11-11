@@ -1,5 +1,4 @@
 {
-  "gosha": "Georgiy",
   "nav": {
     "item1": "Yangiliklar",
     "item2": "Web3 nima?",
@@ -101,7 +100,7 @@
     "title": "Sahifa topilmadi",
     "text": "Lekin biz sizga marshrutdagi kerakli nuqtaga qaytishingizga yordam beramiz",
     "post-text": "Bu post mavjud emas yoki o'chirilgan",
-    "button-next": "Bosh sahifaga qaytish"
+    "button-text": "Bosh sahifaga qaytish"
   },
   "icon": {
     "icon-pointing": "Kontentga ishora qiluvchi belgi",
@@ -143,5 +142,10 @@
         "alt": "Asterium — Kriptovalyuta birjasi"
       }
     }
+  },
+  "documents": {
+    "user-agreement": "https://s3-legal.asterium.uz/Public_Offer_of_ASTERIUM.UZ_Crypto_Exchange_uz.html",
+    "privacy-policy": "https://s3-legal.asterium.uz/Privacy_policy_uz.pdf",
+    "license": "https://s3-legal.asterium.uz/Clearing_service_agreement_uz.html"
   }
 }

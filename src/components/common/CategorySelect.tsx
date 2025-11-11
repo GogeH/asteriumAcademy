@@ -98,12 +98,18 @@ export default function CategorySelect({ categories }: TCategorySelectProps) {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-[220px] h-[48px] rounded-[24px] border border-[rgba(230,230,230,0.7)] px-4 pr-4 bg-transparent text-white font-normal text-base focus:outline-none focus:ring-2 focus:border-transparent transition-colors cursor-pointer flex items-center justify-between"
+        className="w-[220px] h-[48px] rounded-[24px] border border-[rgba(230,230,230,0.7)] px-4 pr-4 bg-transparent
+        text-white font-normal text-base focus:outline-none focus:ring-2 focus:border-transparent transition-colors
+        cursor-pointer flex items-center justify-between group"
         aria-haspopup="listbox"
         aria-expanded={isOpen}
       >
         <span
-          className={isNotCategorySelected ? 'text-gray-400' : 'text-white'}
+          className={`transition-colors duration-300 ${
+            isNotCategorySelected
+              ? 'text-gray-400 group-hover:text-gray-200'
+              : 'text-white group-hover:text-gray-400'
+          }`}
         >
           {buttonText}
         </span>

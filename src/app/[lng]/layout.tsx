@@ -1,7 +1,28 @@
-// app/[lng]/layout.tsx
-import { ReactNode } from 'react';
+import { Inter, Manrope, Roboto } from 'next/font/google';
+import { ReactNode, Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import AnchorHandlerWrapper from '@/components/common/Anchor/AnchorHandlerWrapper';
+import '../globals.css';
+import GoogleAnalytics from '@/components/common/GoogleAnalytics';
+
+const manrope = Manrope({
+  variable: '--font-manrope',
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
+});
+
+const roboto = Roboto({
+  variable: '--font-roboto',
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
+});
+
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
+});
 
 type Props = {
   children: ReactNode;
@@ -25,8 +46,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     '@type': 'Organization',
     name: 'Asterium',
     description: t('metadata.description'),
-    url: 'https://asterium.uz',
-    logo: 'https://asterium.uz/images/png/logo.png',
+    url: 'asterium-academy.uz',
+    logo: 'https://asterium-academy.uz/images/png/logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+998 78 777-55-58',
@@ -56,10 +77,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   return {
-    metadataBase: new URL(`https://asterium.uz/${t('metadata.url')}`),
+    metadataBase: new URL(`https://asterium-academy.uz/${t('metadata.url')}`),
     title: {
       default: t('metadata.title'),
-      template: `%s | Asterium.uz/${t('metadata.url')}`,
+      template: `%s | Asterium-academy.uz.uz/${t('metadata.url')}`,
     },
     description: t('metadata.description'),
     keywords: [
@@ -76,7 +97,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     authors: [
       {
         name: t('metadata.creator'),
-        url: `https://asterium.uz/${t('metadata.url')}`,
+        url: `https://asterium-academy.uz/${t('metadata.url')}`,
       },
     ],
     creator: t('metadata.creator'),
@@ -84,13 +105,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: 'website',
       locale: localeMap[lng as keyof typeof localeMap] || 'en_US',
-      url: `https://asterium.uz/${t('metadata.url')}`,
-      siteName: `Asterium.uz/${t('metadata.url')}`,
+      url: `https://asterium-academy.uz/${t('metadata.url')}`,
+      siteName: `asterium-academy.uz/${t('metadata.url')}`,
       title: t('metadata.title'),
       description: t('metadata.open-graph.description'),
       images: [
         {
-          url: 'https://asterium.uz/og/asterium-cover.png',
+          url: 'https://asterium-academy/og/asterium-cover.png', // ждем
           width: 1200,
           height: 630,
           alt: t('metadata.open-graph.images.alt'),
@@ -101,7 +122,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: t('metadata.title'),
       description: t('metadata.description'),
-      images: ['https://asterium.uz/og/asterium-cover.png'],
+      images: ['https://asterium-academy/og/asterium-cover.png'], // ждем
     },
     robots: {
       index: true,
@@ -115,13 +136,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     alternates: {
-      canonical: `https://asterium.uz/${t('metadata.url')}`,
+      canonical: `https://asterium-academy.uz/${t('metadata.url')}`,
       languages: {
-        'en-US': 'https://asterium.uz/en',
-        'ru-RU': 'https://asterium.uz/ru',
-        'uz-UZ': 'https://asterium.uz/uz',
+        'en-US': 'asterium-academy/en',
+        'ru-RU': 'asterium-academy/ru',
+        'uz-UZ': 'asterium-academy/uz',
       },
     },
+    icons: {
+      icon: [
+        { url: '/favicon/favicon.ico' },
+        { url: '/favicon/favicon-16x16.png', sizes: '16x16' },
+        { url: '/favicon/favicon-32x32.png', sizes: '32x32' },
+      ],
+      apple: [{ url: '/favicon/apple-touch-icon.png' }],
+      other: [
+        {
+          rel: 'android-chrome-192x192',
+          url: '/favicon/android-chrome-192x192.png',
+        },
+        {
+          rel: 'android-chrome-512x512',
+          url: '/favicon/android-chrome-512x512.png',
+        },
+      ],
+    },
+    manifest: '/favicon/site.webmanifest',
     other: {
       'script:ld+json': JSON.stringify(siteJsonLd),
     },
@@ -135,5 +175,19 @@ export default async function LanguageLayout({ children, params }: Props) {
     notFound();
   }
 
-  return children;
+  return (
+    <html lang={lng}>
+      <head>
+        <GoogleAnalytics />
+      </head>
+      <body
+        className={`${manrope.variable} ${roboto.variable} ${inter.variable} antialiased`}
+      >
+        <Suspense fallback={null}>
+          <AnchorHandlerWrapper />
+        </Suspense>
+        {children}
+      </body>
+    </html>
+  );
 }

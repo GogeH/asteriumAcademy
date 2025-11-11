@@ -94,7 +94,7 @@ export default async function Advantages({ lng }: TAdvantagesProps) {
       </div>
       <ul
         className="grid grid-cols-2 gap-16 w-full rounded-[20px] px-20 pt-39 pb-9 border bg-dark-gray border-white/40 items-center pb-15 max-xl:gap-5
-       max-lg:grid-cols-1 max-lg:px-10 max-lg:pt-36 max-lg:gap-24 max-sm:pt-20 max-sm:gap-9 max-sm:pb-19"
+          max-lg:grid-cols-1 max-lg:px-10 max-lg:pt-36 max-lg:gap-24 max-sm:pt-20 max-sm:gap-9 max-sm:pb-19"
         role="list"
       >
         {ADVANTAGE_LIST.map((advantage) => (
@@ -102,10 +102,11 @@ export default async function Advantages({ lng }: TAdvantagesProps) {
             key={advantage.titleKey}
             className={`
               flex max-lg:flex-row-reverse max-lg:justify-between max-sm:flex-col items-center
+              transform transition-transform duration-500 ease-in-out
+              hover:-translate-y-2
               ${advantage.id === 1 ? 'max-lg:row-start-3 max-sm:row-start-2' : ''}
               ${advantage.id === 2 ? 'max-lg:row-start-2 max-sm:row-start-3' : ''}
-              
-      `}
+       `}
           >
             <article
               className={`mr-9 ${advantage.id === 0 ? 'max-lg:mr-0' : 'max-lg:mr-8  max-sm:mr-0'} max-sm:mb-9`}

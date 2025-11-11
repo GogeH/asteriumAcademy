@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
+import { redirect, usePathname, useRouter } from 'next/navigation';
 
 const LANGUAGES = [
   { code: 'ru', name: 'RUS' },
@@ -15,13 +15,13 @@ type TLanguageCode = 'ru' | 'uz' | 'en';
 type TLanguageSwitcherProps = {
   isBurgerMenu?: boolean;
   isErrorPage?: boolean;
-  iconLanguageALt: string;
+  iconLanguageAlt: string;
 };
 
 export default function LanguageSwitcher({
   isBurgerMenu,
   isErrorPage,
-  iconLanguageALt,
+  iconLanguageAlt,
 }: TLanguageSwitcherProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -41,15 +41,14 @@ export default function LanguageSwitcher({
   const [currentLang, setCurrentLang] = useState<string>(getCurrentLang());
 
   const changeLanguage = (lng: string) => {
-    if (isErrorPage) {
-      router.push(`/${lng}`);
-    } else {
-      const newPathname = pathname.replace(`/${currentLang}`, `/${lng}`);
-      router.push(newPathname);
-    }
-
+    const newPathname = pathname.replace(`/${currentLang}`, `/${lng}`);
+    router.push(newPathname);
     setCurrentLang(lng);
     setIsOpen(false);
+
+    if (isErrorPage) {
+      redirect(`/${lng}`);
+    }
   };
 
   useEffect(() => {
@@ -88,12 +87,14 @@ export default function LanguageSwitcher({
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="h-4 flex items-center justify-center font-inter font-semibold text-sm leading-[115%] tracking-[-0.02em] text-center cursor-pointer"
+        className="h-4 flex items-center justify-center font-inter font-semibold text-sm leading-[115%] tracking-[-0.02em] text-center cursor-pointer group"
       >
-        <span className="mr-2">{currentLang.toUpperCase()}</span>
+        <span className="mr-2 group-hover:text-gray-400 transition-colors duration-300">
+          {currentLang.toUpperCase()}
+        </span>
         <Image
           src="/svg/global.svg"
-          alt={iconLanguageALt}
+          alt={iconLanguageAlt}
           width={24}
           height={24}
         />

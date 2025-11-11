@@ -18,7 +18,7 @@ export default async function JourneyStarter({ lng }: TJourneyStarterProps) {
           {t('title-page.item1')}
         </div>
         <div
-          className="font-medium text-right bg-gradient-to-r from-accent-green to-accent-yellow bg-clip-text text-transparent break-words
+          className="font-bold sm:font-medium text-right bg-gradient-to-r from-accent-green to-accent-yellow bg-clip-text text-transparent break-words
           transform translate-x-[-70px] -rotate-[10deg] max-lg:translate-x-[8px] max-lg:translate-y-[-40px] max-sm:translate-x-[4px] max-sm:translate-y-[-43px]"
         >
           web3
@@ -28,13 +28,15 @@ export default async function JourneyStarter({ lng }: TJourneyStarterProps) {
       <p className="w-full font-normal text-base tracking-normal text-center align-middle text-silver max-w-[368px] mx-auto mb-10  max-lg:mb-9">
         {t('slogan')}.
       </p>
-      <Image
-        className="mx-auto block max-lg:hidden"
-        src="/svg/mouse.svg"
-        alt={t('icon.icon-pointing')}
-        width={64}
-        height={64}
-      />
+      <div className="animate-[bounce_2s_ease-in-out_infinite]">
+        <Image
+          className="mx-auto block max-lg:hidden"
+          src="/svg/mouse.svg"
+          alt={t('icon.icon-pointing')}
+          width={64}
+          height={64}
+        />
+      </div>
     </section>
   );
 }
