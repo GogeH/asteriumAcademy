@@ -9,12 +9,12 @@ type JsonLD = {
 
 type StructuredDataProps = {
   post?: TPost;
-  lang?: 'en' | 'ru' | 'uz';
+  lang?: 'ru' | 'en' | 'uz';
 };
 
 export default function StructuredData({
   post,
-  lang = 'en',
+  lang = 'ru',
 }: StructuredDataProps) {
   const pathname =
     typeof window !== 'undefined' ? window.location.pathname : '';
@@ -23,14 +23,14 @@ export default function StructuredData({
   const siteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Asterium',
-    description: 'The largest cryptocurrency exchange in Uzbekistan',
-    url: 'https://asterium.uz',
-    logo: 'https://asterium.uz/images/png/logo.png',
+    name: 'Asterium Academy',
+    description: 'Криптообразование в Узбекистане',
+    url: 'https://asterium-academy.uz',
+    logo: 'https://asterium-academy.uz/images/png/logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+998 78 777-55-58',
-      email: 'support@asterium.uz',
+      email: 'support@asterium-academy.uz',
       contactType: 'customer service',
     },
     sameAs: [
@@ -60,7 +60,7 @@ export default function StructuredData({
         '@type': 'ListItem',
         position: index + 1,
         name,
-        item: `https://asterium.uz${url}`,
+        item: `https://asterium-academy.uz${url}`,
       };
     });
 
@@ -74,7 +74,7 @@ export default function StructuredData({
   if (post) {
     const previewImageUrl = post.Preview_Image
       ? `https://cms.asterium.uz/assets/${post.Preview_Image}`
-      : 'https://asterium.uz/images/png/logo.png';
+      : 'https://asterium-academy.uz/images/png/logo.png';
 
     const postJsonLd = {
       '@context': 'https://schema.org',
@@ -83,7 +83,7 @@ export default function StructuredData({
       datePublished: post.date_created,
       dateModified: post.date_updated,
       description: post.excerpt || post.content.slice(0, 160),
-      url: `https://asterium.uz/${lang}/post/${post.slug}`,
+      url: `https://asterium-academy.uz/${lang}/post/${post.slug}`,
       BlogType: post.Blog_type,
       status: post.status,
       readingTime: post.Reading_time,

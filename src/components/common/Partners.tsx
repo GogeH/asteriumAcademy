@@ -25,16 +25,19 @@ export default async function Partners({ lng }: TPartnersProps) {
 
   return (
     <section
-      className="flex justify-between items-center flex-wrap bg-dark-gray mb-25 mr-12 rounded-[40px]
-    border border-white/40 py-10.5 px-8 pb-7 max-lg:px-5 max-lg:mr-0 max-lg:pb-10 max-lg:mb-21 max-sm:px-6 max-sm:px-6 max-sm:py-11"
+      className="flex justify-between items-center flex-wrap bg-dark-gray mb-25 rounded-[40px] max-w-[1200px] mx-auto
+    border border-white/40 py-10.5 px-8 max-lg:px-5 max-sm:px-1 pb-7 max-lg:pb-10 max-lg:mb-21 max-sm:py-11"
     >
-      <div className="max-w-[368px] max-xl:mb-10">
+      <div className="max-w-[368px] max-xl:mb-10 px-5 sm:px-0">
         <h4 className="font-bold text-[32px] leading-none tracking-[-0.04em] uppercase mb-3">
           {t('partners.title')}
         </h4>
         <p className=" leading-[131.25%] text-silver">{t('partners.text')}</p>
       </div>
-      <ul className="flex flex-wrap gap-[104px] max-lg:gap-[80px]" role="list">
+      <ul
+        className="flex flex-wrap gap-[104px] max-lg:gap-[66px] max-sm:justify-center max-sm:mx-auto"
+        role="list"
+      >
         {partnerlist.map((partner) => (
           <li
             key={partner.name}

@@ -1,5 +1,4 @@
 {
-  "gosha": "Георгий",
   "nav": {
     "item1": "Блог",
     "item2": "Что такое web3?",
@@ -34,7 +33,7 @@
     "list-documents": {
       "user-agreement": "Пользовательское соглашение",
       "policy-confidentiality": "Политика конфиденциальности",
-      "license": "Лецензия"
+      "license": "Лицензия"
     }
   },
   "faq": {
@@ -93,7 +92,7 @@
     "message-error-posts": "Не получилось загрузить посты!",
     "min-read": "минут читать",
     "read-more": "Читать далее",
-    "button-text": "Начните использовать Астериум",
+    "button-text": "Начните использовать Asterium",
     "created": "Создан",
     "updated": "Обновлен"
   },
@@ -101,7 +100,7 @@
     "title": "Страница не найдена",
     "text": "Но мы поможем вернуться к нужной точке маршрута",
     "post-text": "Такого поста нет или он удалён",
-    "button-next": "Вернуться на главную"
+    "button-text": "Вернуться на главную"
   },
   "icon": {
     "icon-pointing": "Иконка указывающая на контент",
@@ -112,7 +111,7 @@
     "logo-icon": "Иконка логотипа",
     "armenian-code-icon": "Иконка партнёра Armenian code academy",
     "mdis-icon": "Иконка партнёра MDIS Tashkent",
-    "asterium-icon": "Иконка астериум",
+    "asterium-icon": "Иконка Asterium",
     "planet-icon": "Иконка планеты для выбора языка",
     "instagram-icon": "Иконка инстагама",
     "telegram-icon": "Иконка телеграма",
@@ -120,11 +119,11 @@
   },
   "metadata": {
     "url": "ru",
-    "title": "Астериум — ведущая криптовалютная биржа в Узбекистане",
-    "authors": "Команда Астериум",
+    "title": "Asterium — Ведущая криптовалютная биржа в Узбекистане",
+    "authors": "Команда Asterium",
     "description": "The largest cryptocurrency exchange in Uzbekistan",
     "keywords": {
-      "asterium": "Астериум",
+      "asterium": "Asterium",
       "crypto-exchange": "криптобиржа",
       "cryptocurrency": "криптовалюта",
       "bitcoin": "Биткойн",
@@ -133,15 +132,20 @@
       "crypto-trading": "криптоторговля",
       "tashkent": "Ташкент"
     },
-    "creator": "Команда Астериум",
-    "publisher": "Астериум",
+    "creator": "Команда Asterium",
+    "publisher": "Asterium",
     "open-graph": {
       "type": "веб-сайт",
       "locale": "ru_RU",
       "description": "Торгуйте, покупайте и храните криптовалюты безопасно с Asterium — самой надежной криптоплатформой в Узбекистане.",
       "images": {
-        "alt": "Астериум — Криптовалютная биржа"
+        "alt": "Asterium — Криптовалютная биржа"
       }
     }
+  },
+  "documents": {
+    "user-agreement": "https://s3-legal.asterium.uz/Public_Offer_of_ASTERIUM.UZ_Crypto_Exchange_ru.html",
+    "privacy-policy": "https://s3-legal.asterium.uz/Privacy_policy_ru.pdf",
+    "license": "https://s3-legal.asterium.uz/Clearing_service_agreement_ru.html"
   }
 }

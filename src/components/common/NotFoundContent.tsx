@@ -26,7 +26,7 @@ export default async function NotFoundContent({
           href={`/${lng}`}
           className="inline-block bg-[rgba(86,86,86,0.3)] backdrop-blur-sm text-white px-6 py-3 rounded-[24px] hover:bg-[rgba(86,86,86,0.5)] transition-colors font-inter font-semibold"
         >
-          {t('not-found.button-next')}
+          {t('not-found.button-text')}
         </Link>
       </div>
     </main>

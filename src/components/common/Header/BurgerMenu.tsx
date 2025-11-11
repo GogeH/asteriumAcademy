@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import Image from 'next/image';
 import NavItem from '@/components/common/Header/NavItem';
@@ -12,7 +13,10 @@ type TBurgerMenuProps = {
   isErrorPage?: boolean;
   translatedNavItems: TNavItem[];
   iconALt: string;
-  iconLanguageALt: string;
+  iconLanguageAlt: string;
+  lng: string;
+  isOpen: boolean;
+  setIsOpenAction: (open: boolean) => void;
 };
 
 export default function BurgerMenu({
@@ -20,18 +24,24 @@ export default function BurgerMenu({
   isErrorPage,
   translatedNavItems,
   iconALt,
-  iconLanguageALt,
+  iconLanguageAlt,
+  lng,
+  isOpen,
+  setIsOpenAction,
 }: TBurgerMenuProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpenAction(!isOpen);
   };
 
   useEffect(() => {
     if (isOpen) {
       const scrollY = window.scrollY;
-
       document.body.style.position = 'fixed';
       document.body.style.top = `-${scrollY}px`;
       document.body.style.width = '100%';
@@ -55,6 +65,50 @@ export default function BurgerMenu({
       document.body.style.overflow = '';
     };
   }, [isOpen]);
+
+  const menuContent =
+    mounted &&
+    createPortal(
+      <div
+        className={`max-[750px]:block hidden fixed inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 z-40 transition-all duration-700 ease-in-out ${
+          isOpen
+            ? 'opacity-100 visible translate-y-0'
+            : 'opacity-0 invisible -translate-y-full'
+        }`}
+        style={{
+          background: 'rgba(19, 19, 22, 1)',
+        }}
+      >
+        <div className="-mt-16 p-15 pt-27 max-sm:p-4 max-sm:pt-20 h-full overflow-y-auto">
+          <Link href="/" onClick={() => setIsOpenAction(false)}>
+            <Image
+              src="/svg/asteriumBig.svg"
+              alt={iconALt}
+              className="mb-13"
+              width={48}
+              height={48}
+            />
+          </Link>
+          {translatedNavItems.slice(isNotFoundHeader ? 2 : 0, 3).map((item) => (
+            <NavItem
+              key={item.anchor}
+              navItem={item}
+              isBurgerMenu
+              setIsOpenAction={setIsOpenAction}
+              iconALt={iconALt}
+              lng={lng}
+            />
+          ))}
+          <div className="border-1 border-white/40 my-6" />
+          <LanguageSwitcher
+            isBurgerMenu
+            iconLanguageAlt={iconLanguageAlt}
+            isErrorPage={isErrorPage}
+          />
+        </div>
+      </div>,
+      document.body,
+    );
 
   return (
     <div className="max-[750px]:block hidden">
@@ -104,41 +158,7 @@ export default function BurgerMenu({
         </div>
       </button>
 
-      <div
-        className={`fixed inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 p-4 z-40 transition-all duration-700 ease-in-out ${
-          isOpen
-            ? 'opacity-100 visible translate-y-0'
-            : 'opacity-0 invisible -translate-y-full'
-        }`}
-        style={{
-          background: 'rgba(19, 19, 22, 1)',
-        }}
-      >
-        <Link href="/">
-          <Image
-            src="/svg/asteriumBig.svg"
-            alt={iconALt}
-            className="mb-13"
-            width={48}
-            height={48}
-          />
-        </Link>
-        {translatedNavItems.slice(isNotFoundHeader ? 2 : 0, 3).map((item) => (
-          <NavItem
-            key={item.anchor}
-            navItem={item}
-            isBurgerMenu
-            setIsOpenAction={setIsOpen}
-            iconALt={iconALt}
-          />
-        ))}
-        <div className="border-1 border-white/40" />
-        <LanguageSwitcher
-          isBurgerMenu
-          iconLanguageALt={iconLanguageALt}
-          isErrorPage={isErrorPage}
-        />
-      </div>
+      {menuContent}
     </div>
   );
 }

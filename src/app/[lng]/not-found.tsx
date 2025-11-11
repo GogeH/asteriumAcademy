@@ -1,7 +1,7 @@
 import { headers } from 'next/headers';
-import Header from '@/components/common/Header/Header';
 import Footer from '@/components/common/Footer/Footer';
 import NotFoundContent from '@/components/common/NotFoundContent';
+import HeaderWrapper from '@/components/common/Header/HeaderWrapper';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,7 +15,7 @@ export default async function NotFound() {
 
   return (
     <div className="pt-8 max-lg:pt-11 max-sm:pt-4">
-      <Header lng={lng} isErrorPage />
+      <HeaderWrapper lng={lng} isErrorPage />
       <NotFoundContent lng={lng} isPostPage />
       <Footer lng={lng} />
     </div>

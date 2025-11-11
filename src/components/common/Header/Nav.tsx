@@ -17,7 +17,7 @@ export default function Nav({
   return (
     <nav className="max-[750px]:hidden">
       <ul
-        className="flex justify-between gap-6 w-full rounded-[48px] border-3 py-4 px-10 font-medium text-[14px] align-middle leading-8 backdrop-blur-[51.97px] bg-transparent
+        className="flex justify-between gap-6 w-full rounded-[48px] border-3 py-3 px-10 font-medium text-[14px] align-middle leading-8 bg-transparent
         max-lg:px-8"
         role="list"
         style={{

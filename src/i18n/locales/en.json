@@ -1,5 +1,4 @@
 {
-  "gosha": "George",
   "nav": {
     "item1": "Blog",
     "item2": "What is web3?",
@@ -101,7 +100,7 @@
     "title": "Page not found",
     "text": "But we will help you get back to the desired point on the route",
     "post-text": "This post does not exist or has been delete",
-    "button-next": "Return to home page"
+    "button-text": "Return to home page"
   },
   "icon": {
     "icon-pointing": "Icon pointing to content",
@@ -120,7 +119,7 @@
   },
   "metadata": {
     "url": "en",
-    "title": "Asterium - the leading cryptocurrency exchange in Uzbekistan",
+    "title": "Asterium - The leading cryptocurrency exchange in Uzbekistan",
     "authors": "Asterium Team",
     "description": "The largest cryptocurrency exchange in Uzbekistan",
     "keywords": {
@@ -143,5 +142,10 @@
         "alt": "Asterium — Cryptocurrency Exchange"
       }
     }
+  },
+  "documents": {
+    "user-agreement": "https://s3-legal.asterium.uz/Public_Offer_of_ASTERIUM.UZ_Crypto_Exchange_en.html",
+    "privacy-policy": "https://s3-legal.asterium.uz/Privacy_policy_en.pdf",
+    "license": "https://s3-legal.asterium.uz/Clearing_service_agreement_en.html"
   }
 }

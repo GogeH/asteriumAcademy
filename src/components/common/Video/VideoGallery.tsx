@@ -2,7 +2,6 @@ import Link from 'next/link';
 import VideoPlayer from '@/components/common/Video/VideoPlayer';
 import { useTranslation } from '@/app/i18n';
 
-// Убираем статические заголовки из VIDEO_INFO
 const VIDEO_INFO = [
   {
     id: 1,
@@ -37,7 +36,7 @@ export default async function VideoGallery({ lng }: TVideoGalleryProps) {
 
   return (
     <section
-      className="max-w-[1216px] mx-auto mb-27 max-lg:mb-30 max-sm:mb-21"
+      className="max-w-[1200px] mx-auto mb-27 max-lg:mb-30 max-sm:mb-21"
       id="web3"
     >
       <div className="mb-23">

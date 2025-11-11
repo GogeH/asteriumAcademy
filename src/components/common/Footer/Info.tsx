@@ -22,7 +22,10 @@ export default function Info({ info }: TInfoProps) {
       <h3 className={`${HEADING_BASE} mb-4`}>{info.title}</h3>
       <ul role="list">
         {info.list.map((item) => (
-          <li key={item.name} className={`${SUB_HEADING} mb-2`}>
+          <li
+            key={item.name}
+            className={`${SUB_HEADING} mb-2 transition-colors duration-300 hover:opacity-100 hover:text-white`}
+          >
             <Link href={item.href} target="_blank">
               {item.name}
             </Link>

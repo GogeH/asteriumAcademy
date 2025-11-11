@@ -15,15 +15,11 @@ export const getTranslatedInfo = (t: (key: string) => string) => [
     list: [
       {
         name: t('footer.list-about-platform.products'),
-        href: '#',
+        href: 'https://asterium.uz/#products',
       },
       {
         name: t('footer.list-about-platform.ecosystem'),
-        href: '#',
-      },
-      {
-        name: t('footer.list-about-platform.team'),
-        href: '#',
+        href: 'https://asterium.uz/',
       },
     ],
   },
@@ -32,19 +28,19 @@ export const getTranslatedInfo = (t: (key: string) => string) => [
     list: [
       {
         name: t('footer.list-to-user.support'),
-        href: '#',
+        href: 'https://asterium.uz/#faq',
       },
       {
         name: t('footer.list-to-user.knowledge-base'),
-        href: '#',
+        href: 'https://asterium.uz/#knowledge-base',
       },
       {
         name: t('footer.list-to-user.blog'),
-        href: '#',
+        href: 'https://asterium.uz/blog',
       },
       {
         name: t('footer.list-to-user.faq'),
-        href: '#',
+        href: 'https://asterium.uz/#faq',
       },
     ],
   },
@@ -54,15 +50,15 @@ export const getTranslatedInfo = (t: (key: string) => string) => [
     list: [
       {
         name: t('footer.list-documents.user-agreement'),
-        href: '#',
+        href: t('documents.user-agreement'),
       },
       {
         name: t('footer.list-documents.policy-confidentiality'),
-        href: '#',
+        href: t('documents.privacy-policy'),
       },
       {
         name: t('footer.list-documents.license'),
-        href: '#',
+        href: t('documents.license'),
       },
     ],
   },
@@ -100,9 +96,9 @@ export default async function Footer({
 
   return (
     <footer
-      className={`w-full ${isPostPage ? 'pl-31 pr-37' : 'px-34'}  max-lg:px-16 max-sm:px-4 pb-13 max-lg:pb-8 max-sm:pb-30`}
+      className={`w-full ${isPostPage ? 'pl-31 pr-37' : 'px-34'} max-w-[1472px] mx-auto max-lg:px-16 max-sm:px-4 pb-13 max-lg:pb-8 max-sm:pb-30`}
     >
-      <Link href="/public">
+      <Link href="/">
         <Image
           src="/svg/logo.svg"
           alt={t('icon.logo-icon')}
@@ -118,31 +114,50 @@ export default async function Footer({
             {t('footer.contact')}
           </h3>
           <div className="space-y-3">
-            <div className="mb-4">
-              <h4 className={`${SUB_HEADING} mb-1 max-sm:text-xs`}>
+            <div className="mb-4 group">
+              <h4
+                className={`${SUB_HEADING} mb-1 max-sm:text-xs group-hover:opacity-100 cursor-pointer`}
+              >
                 {t('footer.address')}
               </h4>
-              <p className={`${TEXT_BASE} max-sm:text-xs`}>
+              <Link
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`Asterium, ${t('footer.address-country')}, ${t('footer.address-info')}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${TEXT_BASE} max-sm:text-xs hover:no-underline block`}
+              >
                 {t('footer.address-country')},
                 <br />
-                {t('footer.address-info')},
-              </p>
+                {t('footer.address-info')}
+              </Link>
             </div>
-            <div className="mb-4">
-              <h4 className={`${SUB_HEADING} max-sm:text-xs`}>
+            <div className="mb-4 group">
+              <h4
+                className={`${SUB_HEADING} max-sm:text-xs group-hover:opacity-100 cursor-pointer`}
+              >
                 {t('footer.mail')}
               </h4>
-              <p className={`${TEXT_BASE} max-sm:text-xs`}>
+              <Link
+                href="mailto:support@asterium.uz"
+                rel="nofollow"
+                className={`${TEXT_BASE} max-sm:text-xs hover:no-underline`}
+              >
                 support@asterium.uz
-              </p>
+              </Link>
             </div>
-            <div>
-              <h4 className={`${SUB_HEADING} max-sm:text-xs`}>
+            <div className="group">
+              <h4
+                className={`${SUB_HEADING} max-sm:text-xs group-hover:opacity-100 cursor-pointer`}
+              >
                 {t('footer.helpline')}
               </h4>
-              <p className={`${TEXT_BASE} max-sm:text-xs`}>
+              <Link
+                href="tel:+998787775558"
+                rel="nofollow"
+                className={`${TEXT_BASE} max-sm:text-xs hover:no-underline`}
+              >
                 +998(84) 777-55-58
-              </p>
+              </Link>
             </div>
           </div>
         </div>

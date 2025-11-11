@@ -25,7 +25,7 @@ export default async function PostContent({
   const { t } = await useTranslation(lng);
 
   return (
-    <section className="break-words mt-45 px-3 max-lg:mt-20 max-lg:px-0">
+    <section className="max-w-[1200px] mx-auto break-words px-3 max-lg:px-0">
       <h1 className="font-medium text-[80px] leading-[100%] tracking-[-0.04em] uppercase mb-6 max-lg:text-[64px] max-sm:text-[48px]">
         {title}
       </h1>

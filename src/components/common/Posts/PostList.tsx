@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PostItem from '@/components/common/Posts/PostItem';
 import { TPost } from '@/types/posts';
 import { postsService } from '@/services/postsService';
@@ -21,6 +21,7 @@ type TSimplePostsListProps = {
   readMore: string;
   lng: string;
   title?: string;
+  totalPosts?: number | null;
 };
 
 export default function PostList({
@@ -36,6 +37,7 @@ export default function PostList({
   readMore,
   title,
   lng,
+  totalPosts,
 }: TSimplePostsListProps) {
   const [posts, setPosts] = useState<TPost[] | null>(initialPosts);
   const [page, setPage] = useState(PAGINATION_CONFIG.INITIAL_PAGE_NUMBER + 1);
@@ -46,6 +48,12 @@ export default function PostList({
       PAGINATION_CONFIG.PAGE_SIZE[breakpoint || 'MOBILE'],
   );
 
+  useEffect(() => {
+    if (posts && totalPosts && posts.length >= totalPosts) {
+      setHasMore(false);
+    }
+  }, [totalPosts, posts]);
+
   const onClickLoadMore = async () => {
     if (isLoading) return;
 
@@ -54,16 +62,11 @@ export default function PostList({
       const newPosts = await postsService.getAll(
         page,
         PAGINATION_CONFIG.PAGE_SIZE[breakpoint || 'MOBILE'],
+        lng,
       );
 
       setPosts((prev) => prev && [...prev, ...newPosts]);
       setPage((prev) => prev + 1);
-
-      if (
-        newPosts.length < PAGINATION_CONFIG.PAGE_SIZE[breakpoint || 'MOBILE']
-      ) {
-        setHasMore(false);
-      }
     } catch {
       setIsError(true);
     } finally {
@@ -86,7 +89,9 @@ export default function PostList({
     );
 
   return (
-    <div className={`${isPostPage && 'px-3 max-lg:mb-16'} max-lg:px-0`}>
+    <div
+      className={`${isPostPage && 'max-w-[1200px] mx-auto px-3 max-lg:mb-16'} max-lg:px-0`}
+    >
       {!isPostPage && categories && <CategorySelect categories={categories} />}
       {isPostPage && (
         <h2 className="font-bold text-[32px] leading-[139%] mb-8 ml-6 max-lg:uppercase max-lg:font-medium max-lg:leading-[100%] max-lg:tracking-[-0.04em] max-lg:ml-0 max-lg:mb-10">

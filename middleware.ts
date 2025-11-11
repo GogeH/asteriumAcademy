@@ -7,6 +7,16 @@ const defaultLocale = 'ru';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Пропускаем статические файлы
+  if (
+    pathname.startsWith('/_next/') ||
+    pathname.startsWith('/api/') ||
+    pathname.startsWith('/static/') ||
+    pathname.includes('.') // файлы с расширением (.svg, .ico, .js и т.д.)
+  ) {
+    return;
+  }
+
   // Проверяем есть ли локаль в пути
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
@@ -14,14 +24,13 @@ export function middleware(request: NextRequest) {
 
   if (pathnameHasLocale) return;
 
-  // Редирект на язык по умолчанию
+  // Редирект на язык по умолчанию только для HTML страниц
   request.nextUrl.pathname = `/${defaultLocale}${pathname}`;
   return NextResponse.redirect(request.nextUrl);
 }
 
 export const config = {
   matcher: [
-    // Пропускаем ВСЕ статические файлы включая картинки
-    '/((?!_next|api|favicon.ico|sitemap.xml|robots.txt|.*\\.(svg|webp|png|jpg|jpeg|gif|ico|css|js|woff|woff2|ttf)).*)',
+    '/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
   ],
 };

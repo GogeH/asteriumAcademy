@@ -12,7 +12,7 @@ export default function BackgroundWrapper({
   return (
     <div
       className="bg-center bg-no-repeat h-[385px] bg-[url('/bg/bg-desktop-1.webp')] max-lg:h-[452px] max-lg:bg-[url('/bg/bg-tablet-1.webp')]
-          max-lg:bg-cover max-lg:bg-[position:left] max-sm:bg-auto"
+          max-lg:bg-cover max-lg:bg-[position:left] max-sm:bg-auto transition-[max-width] ease-in-out"
       {...props}
     >
       <div

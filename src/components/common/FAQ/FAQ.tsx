@@ -23,7 +23,7 @@ export default function FAQ({
   return (
     <>
       <div
-        className={`max-w-[1216px] mx-auto flex justify-between mb-24 ${isPostPage && 'px-3'} max-lg:px-0 max-xl:block max-lg:mb-8 max-sm:mb-29`}
+        className={`max-w-[1200px] mx-auto flex justify-between mb-24 ${isPostPage && 'px-3'} max-lg:px-0 max-xl:block max-lg:mb-8 max-sm:mb-29`}
       >
         <h2 className="font-inter font-bold uppercase text-[24px] leading-[100%] tracking-[-0.04em] mb-8 max-lg:mb-16.5 max-sm:text-[20px] max-sm:mb-14">
           <span className="lg:hidden">{title}</span>

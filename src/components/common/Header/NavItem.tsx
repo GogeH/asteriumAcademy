@@ -1,6 +1,6 @@
 'use client';
 
-import { MouseEvent } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
@@ -23,6 +23,18 @@ export default function NavItem({
 }: TNavListProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const shouldShowIcon = !isBurgerMenu && !(lng === 'ru' && windowWidth < 780);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -88,10 +100,11 @@ export default function NavItem({
           className={
             isBurgerMenu
               ? 'text-text-white-light font-inter font-medium text-[14px] leading-[100%] tracking-[-0.02em]'
-              : 'hover:text-gray-300 transition-colors border-1 rounded-[48px] px-3 cursor-pointer flex justify-between'
+              : 'hover:text-gray-400 transition-colors border-1 rounded-[48px] px-3 cursor-pointer flex justify-between ' +
+                'transition-all duration-300 ease-out transform hover:-translate-y-0.5 hover:animate-pulse py-1'
           }
         >
-          {!isBurgerMenu && (
+          {shouldShowIcon && (
             <Image
               src="/svg/asterium.svg"
               className="mr-2"
@@ -109,7 +122,8 @@ export default function NavItem({
           className={
             isBurgerMenu
               ? 'text-text-white-light font-inter font-medium text-[14px] leading-[100%] tracking-[-0.02em]'
-              : 'hover:text-gray-300 transition-colors border-1 rounded-[48px] px-3 cursor-pointer'
+              : 'hover:text-gray-300 transition-colors border-1 rounded-[48px] px-3 cursor-pointer flex justify-between ' +
+                'transition-all duration-300 ease-out transform hover:-translate-y-0.5 hover:animate-pulse py-1'
           }
         >
           {navItem.text}
